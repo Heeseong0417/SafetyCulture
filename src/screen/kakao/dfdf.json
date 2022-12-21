@@ -1,0 +1,38 @@
+[
+    {
+        "parentName": "박막례",
+        "nextCheckup": "2022-12-02",
+        "userLevel": "3",
+        "precautions": "0",
+        "parentAddress": "경기 성남시 중원구 사기막골로 33 ",
+        "checkupCount": "0",
+        "userId": "wodlrr2",
+        "parentPhone": "01000000000",
+        "startDate": "2022-12-02",
+        "hazardItems": "0"
+    },
+    {
+        "bloodPressure": "0",
+        "breath": "0",
+        "parentName": "박막례",
+        "bloodSugar": "0",
+        "checkupDate": "2022-12-02T00:00",
+        "temperature": "0",
+        "weight": "0",
+        "userId": "wodlrr2",
+        "remaining": "0"
+    },
+    [
+        {
+            "bloodPressure": "0",
+            "breath": "0",
+            "parentName": "박막례",
+            "bloodSugar": "0",
+            "checkupDate": "2022-12-02T00:00",
+            "temperature": "0",
+            "weight": "0",
+            "userId": "wodlrr2",
+            "remaining": "0"
+        }
+    ]
+]
