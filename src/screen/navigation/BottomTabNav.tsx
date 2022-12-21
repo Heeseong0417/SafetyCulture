@@ -16,9 +16,13 @@ import Certification from '../../Certification';
 import CertificationResult from '../../CertificationResult';
 import KakaoLogin from '../kakao/KakaoLogin';
 import Start_user from '../kakao/Start_user';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Safety_main from '../main/Safety_main';
+import {
+  MD3LightTheme as DefaultTheme,
+  Provider as PaperProvider,
+} from "react-native-paper";
 const Tab = createMaterialBottomTabNavigator();
 const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
 const WINDOW_HEIGHT = Dimensions.get("window").height;
@@ -27,13 +31,21 @@ function BottomTabNav({route,navigation}:any) {
 const [user, setuser] = useState([""])
 const [parent, setparent] = useState({})
 const [check, setcheck] = useState({})
-
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    secondaryContainer: "none",
+    primaryContainer:"white",
+    background:"none"
+  },
+};
   
   
   return (
-  
+    <PaperProvider theme={theme}>
     <Tab.Navigator 
-    labeled={true}
+    
     
     //tabBarPosition="bottom"
     initialRouteName="홈"
@@ -104,6 +116,7 @@ const [check, setcheck] = useState({})
        />
     **/}
   </Tab.Navigator>
+  </PaperProvider>
   );
 }
 export default BottomTabNav;

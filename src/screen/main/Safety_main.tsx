@@ -22,6 +22,7 @@ return(<>
 indicatorStyle='white'
 contentContainerStyle={{backgroundColor:"white"  }}
 >
+   
 <View style={{flex:1,margin:5}}>
 
 </View>
