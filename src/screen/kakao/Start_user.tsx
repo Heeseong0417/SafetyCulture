@@ -41,8 +41,8 @@ const Start_user =({navigation}:any)=>{
    const [merchantUid, setMerchantUid] = useState(`imp04335465`);
   const [company, setCompany] = useState('GranyBuddy ');
   const [carrier, setCarrier] = useState('lgt');
-  const [name, setName] = useState('이희승');
-  const [phone, setPhone] = useState('01055226929');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [minAge, setMinAge] = useState('');
   const [tierCode, setTierCode] = useState('');
 
@@ -79,7 +79,7 @@ const Start_user =({navigation}:any)=>{
     return(
 
         <>
-<SafeAreaView style={grany_home.m_v} edges={['top','bottom', 'left', 'right']}>
+<SafeAreaView style={[grany_home.m_v,{backgroundColor:"white"}]} edges={['top','bottom', 'left', 'right']}>
 
         <View style={[grany_home.main_view]}>
             
@@ -112,7 +112,7 @@ const Start_user =({navigation}:any)=>{
               }; */
               //navigation.navigate('Certification', data); 
              // navigation.navigate("CertificationTest")
-             navigation.navigate("BottomTabNav")
+             navigation.navigate("Login")
               }}>
 
 <Text  style={[grany_home.flex_blue_btn_text]}>시작하기</Text>

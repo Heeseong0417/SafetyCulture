@@ -9,7 +9,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Grany_main from "../navigation/Grany_main";
 import { grany_home, grany_start } from "../../style/Styles";
 
-const SiteUp =({route,navigation,}:any)=>{
+const SiteUp =({route,navigation}:any)=>{
     const [isModal, setModal] = useState(false);
     const [visible, setvisible] = useState(false)
     const response = route.params.response;
@@ -37,19 +37,14 @@ const axios_data =()=>{
   
     const Uri = 'http://10.0.2.2:8080/site_up'
     const data_test = {
-      company:"(주)밸리언트데이터",
+      
       userId :form.user.id,
   userPassword :form.user.password,
   userName :params.name,
   userPhone :params.phone,
-  userAddress :form.user.address +" "+form.user.address_l,
-  userKakao :"카카오아이디",
-  userPay :"페이",
-  startDate: new Date(),
-  //new Date(),//.toISOString().substring(0,10),
-  
-  userLevel :"3",
-  notice :"없음"
+  level:3,
+  department:""
+
     }
     console.log(JSON.stringify(data_test))
     Alert.alert(JSON.stringify(data_test))
@@ -98,7 +93,7 @@ parent:{name:"",address:"",Pnumber:""}
                     환영합니다 
                 </Text>
                 <Text style={[grany_start.form_text,{textAlign:"center",margin:5}]}>
-                    그래니 버디가입을 위한 페이지 입니다. 카카오 로그인을 통해 간편 회원가입이 가능합니다.
+                    안전문화 위험도 평가를 위한 회원가입 페이지 입니다. 
                 </Text>
             </View>
         </View>
@@ -164,14 +159,17 @@ parent:{name:"",address:"",Pnumber:""}
 
         </View>
             {form.user.password.length <=8 ? (<Text style={[{color:"red"}]}>비밀번호는 8자리 이상입니다.</Text>):(<></>)} 
+        
+        {/** 
         <View style={[grany_start.form_item]}>
+      
        <Text style={[{flex:1,margin:10},grany_start.form_text]}>거주지 주소 </Text> 
        <TouchableOpacity style={[grany_start.form_btn]} onPress={() => setModal(true)}><Text  style={[grany_start.flex_blue_btn_text]}>주소찾기</Text></TouchableOpacity>
-     </View>
+     </View> 
      <View style={[grany_start.form_item]}>
          <TextInput value={form.user.address} placeholder={"거주지 주소를 입력하세요"} style={[grany_start.form_text_input,grany_start.form_text]} onChangeText={(text) => {
             form.user.address = text
-           /**setform((data)=> {return{ ...data ,form}})**/}}/> 
+           }}/> 
         
         </View>
         <View style={[grany_start.form_item]}>
@@ -180,10 +178,10 @@ parent:{name:"",address:"",Pnumber:""}
        <View style={[grany_start.form_item]}>
          <TextInput placeholder={"세부 주소를 입력하세요"} style={[grany_start.form_text_input,grany_start.form_text]} onChangeText={(text) => {
             form.user.address_l =text
-           /**setform((data)=> {return{ ...data ,form}})**/}}/> 
+           }}/> 
         
         </View>
-   
+    */}
    
                     <TouchableOpacity style={[grany_home.flex_blue_btn,{marginBottom:20}]} onPress={()=>  axios_data()}>
 

@@ -13,21 +13,13 @@ const Login =({navigation}:any)=>{
     const axios_data =()=>{  
   
         const Uri = 'http://10.0.2.2:8080/site_in'
-        const Uri_p = 'http://10.0.2.2:8080/parent'
+       // const Uri_p = 'http://10.0.2.2:8080/parent'
         const data_test = {
           company:"(주)밸리언트데이터",
           userId :users_data.id,
       userPassword :users_data.password,
-      userName :"",
-      userPhone :"",
-      userAddress :"",
-      userKakao :"카카오아이디",
-      userPay :"페이",
-      startDate: new Date(),
-      //new Date(),//.toISOString().substring(0,10),
-      
-      userLevel :"3",
-      notice :"없음"
+      level :"3",
+      dipartment :""
         }
         console.log(JSON.stringify(data_test))
         Alert.alert(JSON.stringify(data_test))
@@ -35,10 +27,11 @@ const Login =({navigation}:any)=>{
     
         axios.post(Uri, data_test).then(function (response) {
           console.log(JSON.stringify(response.data))
+            /**
           if(response.data == false){
             Alert.alert("아이디 또는 비밀번호가 일치하지 않습니다! 다시 로그인해주세요.") 
           }else{
-           
+         
             axios.post(Uri_p, data_test).then(function (response) {
               console.log(response.data)
               
@@ -70,6 +63,7 @@ const Login =({navigation}:any)=>{
 
 
                 ]
+                
                 navigation.reset({routes: [{name: 'BottomTabNav',params:plus_data}]}) 
               } else if(response.data.length == 1){
                 let params_data = response.data;
@@ -89,13 +83,16 @@ const Login =({navigation}:any)=>{
               }else{
                navigation.reset({routes: [{name: 'BottomTabNav',params:response.data}]})   
               }
-              
+             
 
             })
 
-          
+            
           }
-           
+          */   
+         if(response.data == true){navigation.reset({routes: [{name: 'BottomTabNav',params:data_test}]})  }
+        else{ Alert.alert("에러가 발생하였습니다! 다시 로그인해주세요") }
+
         }).catch(function (error) {
           console.log(error);
          Alert.alert("에러가 발생하였습니다! 다시 로그인해주세요") 
@@ -121,7 +118,7 @@ return(<>
                     환영합니다 
                 </Text>
                 <Text style={[grany_start.form_text,{textAlign:"center",margin:5}]}>
-                    그래니버디 로그인을 위한 페이지 입니다.
+                    안전문화 위험성 평가를 위한 로그인 페이지 입니다.
                 </Text>
             </View>
         </View>

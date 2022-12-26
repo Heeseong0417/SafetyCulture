@@ -12,10 +12,15 @@ const WINDOW_HEIGHT = Dimensions.get("window").height;
 export const safety_main = StyleSheet.create(
 {
   home_btn:{
-    borderRadius:30,
+    borderRadius:15,
     backgroundColor:"#0073F0",
     margin:10,
-    padding:10
+    padding:10,
+    justifyContent:"center",
+    flexDirection:"column",
+    width:WINDOW_WIDHT/3,
+    height:WINDOW_WIDHT/3
+
   }
    
   
@@ -28,7 +33,34 @@ height: 2,
 shadowOpacity: 0.25,
 shadowRadius: 3.84,
 elevation: 5
-}
+},list_view:{
+  flex: 1,
+  flexDirection:"row",
+  justifyContent: 'center',
+  alignSelf: 'center',
+  
+  },
+  list_title:{
+  color:"gray",
+  fontSize:WINDOW_WIDHT/22,
+  fontWeight:"bold",
+  fontFamily:"GmarketSansTTFMedium",
+  opacity:0.8,
+  margin:5
+  },main_list_item:{
+    flexGrow:1,
+     justifyContent: "center",
+    width:WINDOW_WIDHT,
+    textAlign:"center"
+   
+   
+  },
+  home_button_w:{
+textAlign:"center",
+color:"white",
+fontFamily:"GmarketSansTTFMedium",
+
+  }
 }
 )
 export const styles = StyleSheet.create({

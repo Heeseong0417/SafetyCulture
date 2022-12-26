@@ -1,4 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
+import { createSharedElementStackNavigator } from "react-navigation-shared-element";
 import KakaoLogin from "./KakaoLogin";
 import SiteUp from "./SiteUp";
 import Start_user from "./Start_user";
@@ -10,15 +11,21 @@ import CertificationResult from "../../CertificationResult";
 import UserCertifcationForm from "./UserCertifcationForm";
 import Login from "./Login";
 import Safety_main from "../main/Safety_main";
+import { NavigationContainer } from "@react-navigation/native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { NativeBaseProvider } from "native-base";
 
 
 const StartNavigation=()=>{
-    const Stack = createStackNavigator();
+    const Stack = createSharedElementStackNavigator();
 
 
     return(<>
+    <SafeAreaProvider>
+    
+    <NavigationContainer>
        <Stack.Navigator initialRouteName='HomeScreen'
-    screenOptions={{ headerShown: false,
+    screenOptions={{ headerShown: false
 
     }}
     
@@ -100,7 +107,7 @@ const StartNavigation=()=>{
    
    
         />
-      </Stack.Navigator>
+      </Stack.Navigator></NavigationContainer></SafeAreaProvider>
     </>)
 }
 

@@ -1,6 +1,7 @@
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Dimensions, useWindowDimensions } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { CardStyleInterpolators } from 'react-navigation-stack';
@@ -23,8 +24,6 @@ import {
   MD3LightTheme as DefaultTheme,
   Provider as PaperProvider,
 } from "react-native-paper";
-import { TabBar } from './TabBar';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createMaterialBottomTabNavigator();
 const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
@@ -50,7 +49,7 @@ const theme = {
    
     <Tab.Navigator 
     
-  
+    
     //tabBarPosition="bottom"
     initialRouteName="홈"
   

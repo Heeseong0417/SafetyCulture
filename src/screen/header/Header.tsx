@@ -30,14 +30,14 @@ const [user, setuser] = useState("")
  
     return(
     <>
-    <StatusBar backgroundColor="#fff" barStyle="light-content" />
+    <StatusBar backgroundColor="#0073F0" barStyle="light-content" />
     
 
     
-    <View style={[grany_home.main_header]}>
-       <Text style={[grany_home.main_ht]}>{name}</Text>
+    <View style={[grany_home.main_header,{backgroundColor:"#0073F0"}]}>
+       <Text style={[grany_home.main_ht,{color:"#fff"}]}>{name}</Text>
   <TouchableOpacity style={[styles_main.header_text,{position:"absolute",alignSelf:"center",right:20,top:15}]} onPress={()=> nav()}>
-    <Ionicons onTextLayout={()=>"my"}  color={"#0073F0"} name={"menu"} size={WINDOW_WIDHT/10}/>
+    <Ionicons onTextLayout={()=>"my"}  color={"#fff"} name={"menu"} size={WINDOW_WIDHT/10}/>
   </TouchableOpacity>
        
     </View>

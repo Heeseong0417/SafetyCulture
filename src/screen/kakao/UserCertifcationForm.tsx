@@ -26,7 +26,7 @@ const [form, setform] = useState({user:{ name:"이희승", Pnumber:""}
                     환영합니다 
                 </Text>
                 <Text style={[grany_start.form_text,{textAlign:"center",margin:5}]}>
-                    그래니 버디가입을 위한 페이지 입니다. 본인인증을 완료해 주세요.
+                    안전문화 위험도 평가를 위한 회원가입 페이지 입니다. 본인인증을 완료해 주세요.
                 </Text>
             </View>
         </View>
@@ -78,14 +78,14 @@ const [form, setform] = useState({user:{ name:"이희승", Pnumber:""}
              {
               const data = {
                 params: {
-                  merchant_uid: "merchantUid",
+                  merchant_uid: "merchant_uid",
                   company:company,
                   carrier:carrier,
                   name:form.user.name,
                   phone:form.user.Pnumber,
-  
+                  
                 },
-      
+                tierCode:'imp04335465'
               }
               Alert.alert(JSON.stringify(data))
               form.user.name===""||form.user.Pnumber ==="" ? (Alert.alert("이름과 전화번호를 정확히 입력하세요.")):navigation.navigate('Certification', data)
