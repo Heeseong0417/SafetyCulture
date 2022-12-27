@@ -25,13 +25,15 @@ import {
 } from "react-native-paper";
 import { TabBar } from './TabBar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeNavigation from './HomeNavigation';
+import TestScreen from '../main/TestScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
 const WINDOW_HEIGHT = Dimensions.get("window").height;
 
 function BottomTabNav({route,navigation}:any) {
-  console.log("router : ",route.params)
+ console.log("router : ",route.params)
 const [user, setuser] = useState([""])
 const [parent, setparent] = useState({})
 const [check, setcheck] = useState({})
@@ -78,32 +80,33 @@ const theme = {
           <MaterialCommunityIcons name="home" color={color} size={30} />
         ),
       }}
-      initialParams={{data: route.params.userId}}
+      initialParams={{data: route.params.userId,route_nav:navigation}}
     ></Tab.Screen>
       
       <Tab.Screen
-      name="버디예약"
+      name="위험성 평가하기"
       
-      component={KakaoLogin}
+      component={TestScreen}
       
       options={{
 
-        
-        tabBarLabel: '버디예약',
+       
+        tabBarLabel: '결과 조회',
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="clipboard-text-outline" color={color} size={30} />
         ),
       }}
+      
       initialParams={{data: route.params.userId}}
     />
     
     
     <Tab.Screen
-      name="사용자"
-      component={Start_user}
+      name="사용자 관리"
+      component={TestScreen}
       options={{
         
-        tabBarLabel: '사용자',
+        tabBarLabel: '사용자 관리',
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="account-box-multiple-outline" color={color} size={30} />
         ),

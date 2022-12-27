@@ -12,6 +12,7 @@ const WINDOW_HEIGHT = Dimensions.get("window").height;
 export const safety_main = StyleSheet.create(
 {
   home_btn:{
+    
     borderRadius:15,
     backgroundColor:"#0073F0",
     margin:10,
@@ -47,19 +48,28 @@ elevation: 5
   fontFamily:"GmarketSansTTFMedium",
   opacity:0.8,
   margin:5
+
   },main_list_item:{
     flexGrow:1,
      justifyContent: "center",
     width:WINDOW_WIDHT,
     textAlign:"center"
-   
-   
+
   },
   home_button_w:{
 textAlign:"center",
 color:"white",
 fontFamily:"GmarketSansTTFMedium",
 
+  },home_title_b:{
+    margin:20,
+    textAlign:"center",
+    color:"black",
+    opacity:0.8,
+    fontFamily:"GmarketSansTTFMedium",
+    fontSize:WINDOW_WIDHT/20
+  },home_icon:{
+    
   }
 }
 )

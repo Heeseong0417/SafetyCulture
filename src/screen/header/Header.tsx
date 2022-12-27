@@ -9,7 +9,9 @@ import {Text} from 'react-native'
 
 type props ={
 name:string
-nav: any
+nav: any,
+icon_name:String,
+route_path:String
 }
 export type BnbNavigator = {
 
@@ -19,12 +21,13 @@ export type BnbNavigator = {
     CarLog:undefined;
     Account:undefined;  
     jumpTo(arg0: string): void;
+    icon_name:String
     
   };
   const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
 const WINDOW_HEIGHT = Dimensions.get("window").height;
 
-export const Header_create =({name,nav}: props)=>{
+export const Header_create =({name,nav,icon_name,route_path}: props)=>{
   const [state, setstate] = useState("none")
 const [user, setuser] = useState("")
  
@@ -36,8 +39,8 @@ const [user, setuser] = useState("")
     
     <View style={[grany_home.main_header,{backgroundColor:"#0073F0"}]}>
        <Text style={[grany_home.main_ht,{color:"#fff"}]}>{name}</Text>
-  <TouchableOpacity style={[styles_main.header_text,{position:"absolute",alignSelf:"center",right:20,top:15}]} onPress={()=> nav()}>
-    <Ionicons onTextLayout={()=>"my"}  color={"#fff"} name={"menu"} size={WINDOW_WIDHT/10}/>
+  <TouchableOpacity style={[styles_main.header_text,{position:"absolute",alignSelf:"center",right:20,top:15}]} onPress={()=> nav.navigate(`${route_path}`)}>
+    <Ionicons onTextLayout={()=>"my"}  color={"#fff"} name={`${icon_name}`} size={WINDOW_WIDHT/10}/>
   </TouchableOpacity>
        
     </View>

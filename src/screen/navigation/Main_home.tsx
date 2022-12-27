@@ -17,7 +17,7 @@ import Screen1 from "./screen1"
 import Screen2 from "./screen2"
 import None1 from "./None";
 import BottomTabNav from "./BottomTabNav";
-import StartNavigation from "../kakao/StartNavigation";
+import StartNavigation from "./StartNavigation";
 const { width,height } = Dimensions.get('window');
 const Main_home =()=>{
 
@@ -26,12 +26,10 @@ const Stack = createSharedElementStackNavigator();
     return(<>
      <NavigationContainer>
       <Stack.Navigator initialRouteName='StartNavigation'
-    screenOptions={{ headerShown: false,
+    screenOptions={{ headerShown: false}}
 
-    }}
-    
-    
       >
+        
         <Stack.Screen  name='StartNavigation' component={StartNavigation}
        
          />

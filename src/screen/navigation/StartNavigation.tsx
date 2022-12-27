@@ -1,36 +1,33 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { createSharedElementStackNavigator } from "react-navigation-shared-element";
-import KakaoLogin from "./KakaoLogin";
-import SiteUp from "./SiteUp";
-import Start_user from "./Start_user";
-import BottomTabNav from "../navigation/BottomTabNav";
+import KakaoLogin from "../kakao/KakaoLogin";
+import SiteUp from "../kakao/SiteUp";
+import Start_user from "../kakao/Start_user";
+import BottomTabNav from "./BottomTabNav";
 
 //import CertificationTest from "../../CertificationTest";
+
 import Certification from "../../Certification";
 import CertificationResult from "../../CertificationResult";
-import UserCertifcationForm from "./UserCertifcationForm";
-import Login from "./Login";
+import UserCertifcationForm from "../kakao/UserCertifcationForm";
+import Login from "../kakao/Login";
 import Safety_main from "../main/Safety_main";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NativeBaseProvider } from "native-base";
+import SubNavigation from "./subNavigation";
+import HomeNavigation from "./HomeNavigation";
 
 
 const StartNavigation=()=>{
-    const Stack = createSharedElementStackNavigator();
-
+    const Stack = createStackNavigator();
 
     return(<>
     <SafeAreaProvider>
     
     <NavigationContainer>
        <Stack.Navigator initialRouteName='HomeScreen'
-    screenOptions={{ headerShown: false
-
-    }}
-    
-    
-      >
+    screenOptions={{ headerShown: false}}>
         <Stack.Screen  name='Start_user' component={Start_user}
         /** sharedElements={(route: any) => {
           const { item }  = route.params;
@@ -61,6 +58,7 @@ const StartNavigation=()=>{
         }} */
    
         />
+        <Stack.Screen name='HomeNavigation' component={HomeNavigation}/>
           <Stack.Screen name='BottomTabNav' component={BottomTabNav}
         /** sharedElements={(route: any) => {
           const { item }  = route.params;
