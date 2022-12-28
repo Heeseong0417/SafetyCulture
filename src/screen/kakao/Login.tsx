@@ -5,14 +5,14 @@ import {Text,View ,Image} from "react-native-animatable";
 import Modal from "react-native-modal/dist/modal";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { grany_home, grany_start } from "../../style/Styles";
-
+import {IP} from "../util/ServerPath"
 const Login =({navigation}:any)=>{
     const [isModal, setModal] = useState(false);
     const [visible, setvisible] = useState(false)
     const [users_data, setusers_data] = useState({id:"",password:""})
     const axios_data =()=>{  
   
-        const Uri = 'http://10.0.2.2:8080/site_in'
+        const Uri = IP+'/site_in'
        // const Uri_p = 'http://10.0.2.2:8080/parent'
         const data_test = {
           company:"(주)밸리언트데이터",

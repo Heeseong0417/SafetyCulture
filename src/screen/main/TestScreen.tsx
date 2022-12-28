@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { SafeAreaView, ScrollView } from "react-native";
+import {  ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, View } from "react-native-animatable"
 import { grany_home, safety_main } from "../../style/Styles"
 import Home_button from "../grid/Home_button"
 import { Header_create } from "../header/Header";
 import Icon_i from "react-native-vector-icons/Ionicons"
 import { TouchableOpacity } from "react-native-gesture-handler";
+import Grid_button from "../grid/Grid_button";
 const TestScreen = ({route,navigation}:any)=>{
     const [menu, setmanu] = useState([
         {name:"떨어짐",value:"walking",route_path:"fall"},
@@ -15,13 +17,14 @@ const TestScreen = ({route,navigation}:any)=>{
         {name:"끼임",value:"walking",route_path:"stuck "}
        ]);
 
-return(<><SafeAreaView style={grany_home.m_v} >
+return(<><SafeAreaView style={{flex:1,marginBottom:100}} >
 
    
-<Header_create name={"위험성 평가하기"} nav={navigation} icon_name={"menu"} route_path={"User"}/>
+
+<Header_create name={route.name} nav={navigation} icon_name={"person-circle-outline"} route_path={"설정"}/>
 
 <View style={[safety_main.list_view]}>
-    <Home_button title={"카테고리"} navigation = {navigation} list_item={menu}/>
+    <Grid_button title={"카테고리"} navigation = {route.params.route_nav.navigate} list_item={menu}/>
 </View></SafeAreaView>
 
 </>)

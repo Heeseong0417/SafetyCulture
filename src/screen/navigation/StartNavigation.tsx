@@ -14,20 +14,20 @@ import Login from "../kakao/Login";
 import Safety_main from "../main/Safety_main";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { NativeBaseProvider } from "native-base";
-import SubNavigation from "./subNavigation";
+
 import HomeNavigation from "./HomeNavigation";
+import { NativeBaseConfigProvider } from "native-base/lib/typescript/core/NativeBaseContext";
 
 
 const StartNavigation=()=>{
     const Stack = createStackNavigator();
 
-    return(<>
+    return(<>    
     <SafeAreaProvider>
-    
+
     <NavigationContainer>
        <Stack.Navigator initialRouteName='HomeScreen'
-    screenOptions={{ headerShown: false}}>
+    screenOptions={{ headerShown: false,}}>
         <Stack.Screen  name='Start_user' component={Start_user}
         /** sharedElements={(route: any) => {
           const { item }  = route.params;

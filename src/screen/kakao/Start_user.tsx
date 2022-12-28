@@ -9,6 +9,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Animated } from "react-native";
 import kakao_img from "../assets/logo/kakao-talk.png"
 import axios from "axios";
+import {IP} from "../util/ServerPath"
 const FadeInView = (props:any) => {
 
   
@@ -63,7 +64,7 @@ const Start_user =({navigation}:any)=>{
   userLevel :"일반",
   notice :"없음"
     } */
-    const Uri = 'http://10.0.2.2:8080/id_overlap'
+    const Uri = IP+'/id_overlap'
     const data_test= {userId:"admin"}; 
     console.log(JSON.stringify(data_test))
     Alert.alert(JSON.stringify(data_test))
@@ -90,9 +91,9 @@ const Start_user =({navigation}:any)=>{
 
 
      
-    <TouchableOpacity style={[grany_home.flex_blue_btn,{backgroundColor:"#F7E600"}]} onPress={()=>navigation.navigate("UserCertifcationForm")}>
+    <TouchableOpacity style={[grany_home.flex_blue_btn,{/**backgroundColor:"#F7E600"**/}]} onPress={()=>navigation.navigate("UserCertifcationForm")}>
     
-<Text  style={[grany_home.flex_blue_btn_text,{color:"#3A1D1D",justifyContent:"space-around",textAlign:"center",alignItems:"center"}]}>{/**<Image style={[grany_home.icon_img]} source={kakao_img}/>**/}  회원가입</Text>
+<Text  style={[grany_home.flex_blue_btn_text,{/**color:"#3A1D1D",**/justifyContent:"space-around",textAlign:"center",alignItems:"center"}]}>{/**<Image style={[grany_home.icon_img]} source={kakao_img}/>**/}  회원가입</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[grany_home.flex_blue_btn,{marginBottom:20}]} onPress={()=> 

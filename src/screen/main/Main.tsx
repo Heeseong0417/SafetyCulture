@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-
+import { NativeBaseProvider } from 'native-base';
 import safety from "../../../assets/logo/safety_logo.gif"
 import {View} from 'react-native-animatable';
 import { Image } from 'react-native-animatable';
@@ -39,7 +39,7 @@ export  const Main: any =()=>{
       {
 splash ? (<>
 
-<View style={{backgroundColor:"#fff",flex:1,justifyContent:"center"}}><Image source={safety}  style={{width:WINDOW_WIDHT,height:WINDOW_WIDHT}} /></View></>):(<StartNavigation/>)
+<View style={{backgroundColor:"#fff",flex:1,justifyContent:"center"}}><Image source={safety}  style={{width:WINDOW_WIDHT,height:WINDOW_WIDHT}} /></View></>):(<NativeBaseProvider><StartNavigation/></NativeBaseProvider>)
 
 
       }

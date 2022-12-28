@@ -2,7 +2,7 @@ import { FlatList } from "react-native";
 import {View, Image, Text} from "react-native-animatable";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { safety_main, styles } from "../../style/Styles";
-import Icon_i from "react-native-vector-icons/FontAwesome5"
+import Icon_i from "react-native-vector-icons/MaterialCommunityIcons"
 import { Alert, AlertDialog } from "native-base";
 
 
@@ -13,36 +13,27 @@ const Home_button =({title,navigation,list_item,user}:any)=>{
     <View
     style={[{
       flex:1,
-      flexDirection:'column',
-      margin:10
+      flexDirection:'column'
     },safety_main.shadow]}>
-       {item.name==="떨어짐"?(
-        <>
-      <TouchableOpacity style={[safety_main.home_btn,{padding:10}]} onPress={()=>navigation.reset({routes: [{name: item.route_path,data:user}]})}>
-      <Text style={[safety_main.home_button_w]}>
-    
-       <Icon_i name={item.value} size={30} color={"white"}/>
-       </Text>
-       
-      
-       </TouchableOpacity> 
-      <Text style={[safety_main.home_button_w,{padding:10}]}>{item.name}</Text></>
-      ):(<>
-      <TouchableOpacity onPress={()=>navigation.navigate(item.route_path,{data:user})}>
+      <>
+      <TouchableOpacity style={[safety_main.shadow]} onPress={()=>navigation.navigate(item.route_path,{data:user})}>
       <View style={[safety_main.home_btn]} >
-       <Text style={[safety_main.home_button_w,{justifyContent:"center",alignItems:"center"}]}>
+       <Text style={[safety_main.home_button_w,{justifyContent:"center",alignItems:"center",opacity:0.8}]}>
  
         <Icon_i style={[{ transform: [
          {rotate:"45deg"}
         ]}]} name={item.value} size={60} color={"white"}/>
 
         </Text>
-         <Text style={[safety_main.home_button_w,{}]}>{item.name}</Text>
+         
        
         </View>
-       
+        <View>
+
+        
+       <Text style={[safety_main.home_button_b,{}]}>{item.name}</Text></View>
         </TouchableOpacity> 
-      </>)}
+      </>
        
       
     </View>
@@ -54,6 +45,7 @@ return(<>
 
 
 <FlatList
+style={[{flex:1}]}
 contentContainerStyle={[safety_main.main_list_item]}
 ListHeaderComponent={
 <View >
@@ -66,7 +58,8 @@ ListHeaderComponent={
     
     renderItem={renderItem}
     keyExtractor={item => item.name}
-  /></View>
+  />
+  </View>
 </>)
 }
 

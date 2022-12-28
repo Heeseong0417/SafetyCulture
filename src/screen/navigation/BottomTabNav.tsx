@@ -1,8 +1,8 @@
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Dimensions, useWindowDimensions } from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Dimensions, useWindowDimensions, View } from 'react-native';
+import MaterialCommunityIcons   from 'react-native-vector-icons/MaterialCommunityIcons';
 import { CardStyleInterpolators } from 'react-navigation-stack';
 import { SafeAreaProvider } from "react-native-safe-area-context"
 import HomeScreen from './HomeScreen';
@@ -27,8 +27,11 @@ import { TabBar } from './TabBar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeNavigation from './HomeNavigation';
 import TestScreen from '../main/TestScreen';
+import { widthPercentageToDP } from 'react-native-responsive-screen';
+import ResultScreen from '../main/ResultScreen';
+import UserScreen from '../main/UserScreen';
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
 const WINDOW_HEIGHT = Dimensions.get("window").height;
 
@@ -49,24 +52,34 @@ const theme = {
   
   
   return (
-   
-    <Tab.Navigator 
+    <Tab.Navigator
+    initialRouteName="Home"
+    tabBarPosition="bottom"
     
-  
-    //tabBarPosition="bottom"
-    initialRouteName="홈"
-  
-    shifting={true}
-  
-      activeColor="#4A319A"
-      inactiveColor='#fff'
+    screenOptions={{
+tabBarInactiveTintColor:"#fff",
+tabBarActiveTintColor:"#0093F0",
+tabBarLabelStyle:{opacity:0.8, fontFamily:"GmarketSansTTFMedium",fontWeight:"300"},
+      tabBarItemStyle:{flex:1},
+      tabBarIconStyle:{alignItems:"center",width:widthPercentageToDP('10%'),opacity:0.8},
+      tabBarIndicatorStyle:[{backgroundColor:"transparent",alignContent:"center",justifyContent:"center"},safety_main.shadow],
+      
+           tabBarStyle:{backgroundColor:"#0073F0", position:"absolute",bottom:5,left:5,right:5,borderRadius:15}
+    }}
+    
+    
+   >
 
-      barStyle={[{opacity:0.8,backgroundColor:"#0073F0"}]}
+  
+      
+      
+
+    
      
-  >
+  
     
     <Tab.Screen
-      name="HOME"
+      name="홈"
       
       component={Safety_main}
      
@@ -77,7 +90,10 @@ const theme = {
        
         
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="home" color={color} size={30} />
+          
+
+         
+          <MaterialCommunityIcons   name="home" color={color} size={widthPercentageToDP('7%')} /> 
         ),
       }}
       initialParams={{data: route.params.userId,route_nav:navigation}}
@@ -91,24 +107,41 @@ const theme = {
       options={{
 
        
-        tabBarLabel: '결과 조회',
+        tabBarLabel: '평가',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="clipboard-text-outline" color={color} size={30} />
+          
+          <MaterialCommunityIcons   name="clipboard-text-outline" color={color} size={widthPercentageToDP('7%')} />
+        ),
+      }}
+      
+      initialParams={{data: route.params.userId,route_nav:navigation}}
+    />
+    <Tab.Screen
+      name="결과"
+      
+      component={ResultScreen}
+      
+      options={{
+
+       
+        tabBarLabel: '결과',
+        tabBarIcon: ({ color }) => (
+          
+          <MaterialCommunityIcons   name="chart-pie" color={color} size={widthPercentageToDP('7%')} />
         ),
       }}
       
       initialParams={{data: route.params.userId}}
     />
     
-    
     <Tab.Screen
-      name="사용자 관리"
-      component={TestScreen}
+      name="설정"
+      component={UserScreen}
       options={{
         
-        tabBarLabel: '사용자 관리',
+        tabBarLabel: '설정',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="account-box-multiple-outline" color={color} size={30} />
+          <MaterialCommunityIcons   name="account-box-multiple-outline" color={color} size={widthPercentageToDP('7%')} />
         ),
       }}
       initialParams={{data: route.params.userId}}
@@ -149,7 +182,7 @@ export default BottomTabNav;
           
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <MaterialCommunityIcons   name="home" color={color} size={26} />
           ),
         }}
       />
@@ -159,7 +192,7 @@ export default BottomTabNav;
         options={{
           tabBarLabel: 'Updates',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
+            <MaterialCommunityIcons   name="bell" color={color} size={26} />
           ),
         }}
       />
@@ -169,7 +202,7 @@ export default BottomTabNav;
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={26} />
+            <MaterialCommunityIcons   name="account" color={color} size={26} />
           ),
         }}
       />

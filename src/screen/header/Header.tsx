@@ -37,8 +37,9 @@ const [user, setuser] = useState("")
     
 
     
-    <View style={[grany_home.main_header,{backgroundColor:"#0073F0"}]}>
-       <Text style={[grany_home.main_ht,{color:"#fff"}]}>{name}</Text>
+    <View style={[grany_home.main_header,{backgroundColor:"#0073F0",borderBottomLeftRadius:5,borderBottomRightRadius:5}]}>
+       <Text style={[grany_home.main_ht,{color:"#fff"},{position:"absolute",alignSelf:"center",left:20,top:20}]}>{name}</Text>
+       <View/>
   <TouchableOpacity style={[styles_main.header_text,{position:"absolute",alignSelf:"center",right:20,top:15}]} onPress={()=> nav.navigate(`${route_path}`)}>
     <Ionicons onTextLayout={()=>"my"}  color={"#fff"} name={`${icon_name}`} size={WINDOW_WIDHT/10}/>
   </TouchableOpacity>

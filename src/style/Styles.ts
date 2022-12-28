@@ -13,14 +13,24 @@ export const safety_main = StyleSheet.create(
 {
   home_btn:{
     
-    borderRadius:15,
+    borderRadius:30,
     backgroundColor:"#0073F0",
-    margin:10,
+    margin:20,
     padding:10,
     justifyContent:"center",
     flexDirection:"column",
-    width:WINDOW_WIDHT/3,
-    height:WINDOW_WIDHT/3
+    paddingVertical:30
+
+  },
+  home_btn_s:{
+    
+    borderRadius:30,
+    backgroundColor:"#0073F0",
+    margin:20,
+    padding:10,
+    justifyContent:"center",
+    flexDirection:"column",
+    paddingVertical:30
 
   }
    
@@ -61,12 +71,18 @@ textAlign:"center",
 color:"white",
 fontFamily:"GmarketSansTTFMedium",
 
-  },home_title_b:{
-    margin:20,
+  },home_button_b:{
     textAlign:"center",
     color:"black",
-    opacity:0.8,
+    opacity:0.6,
     fontFamily:"GmarketSansTTFMedium",
+  },home_title_b:{
+    margin:20,
+    textAlign: "left",
+    color:"black",
+    opacity:0.8,
+    fontWeight:"bold",
+    fontFamily:"GmarketSansTTFBold",
     fontSize:WINDOW_WIDHT/20
   },home_icon:{
     
@@ -223,7 +239,7 @@ header_black:{
   fontFamily:"GmarketSansTTFLight",
   fontSize:WINDOW_WIDHT/20
 },header_text:{
- 
+ opacity:0.8,
   justifyContent:"space-between",color:"#fff",fontWeight:"700",fontFamily:"GmarketSansTTFLight",fontSize:WINDOW_WIDHT/20
 
 },stick:{
@@ -664,7 +680,7 @@ elevation: 5
  
     flexDirection:"row",
     backgroundColor:"#fff",
-    textAlign:"center",
+    
     justifyContent:"space-around",
     alignItems:"center",
     
@@ -777,6 +793,7 @@ elevation: 5
     alignItems: 'center'
   },
   list_view:{
+    padding:10,
     flex: 1,
     flexDirection:"row",
     justifyContent: 'center',

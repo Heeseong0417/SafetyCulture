@@ -8,18 +8,23 @@ import Modal from "react-native-modal/dist/modal";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Grany_main from "../navigation/Grany_main";
 import { grany_home, grany_start } from "../../style/Styles";
-
+import {IP} from "../util/ServerPath"
+import User from "../main/User";
 const SiteUp =({route,navigation}:any)=>{
     const [isModal, setModal] = useState(false);
     const [visible, setvisible] = useState(false)
     const response = route.params.response;
     const params = route.params.params;
+    const [form, setform] = useState({user:{ id:"",siteid:"",password:"",address:"",address_l:"",Pnumber:""},
+parent:{name:"",address:"",Pnumber:""}
+})
 const over_lab=(id: any)=>{
 
-        const Uri = 'http://10.0.2.2:8080/id_overlap'
+        const Uri = IP+'/id_overlap'
         const data_test= {userId:id}; 
         console.log(JSON.stringify(data_test))
         //alert(JSON.stringify(data_test))
+        if(form.user.id.length >= 8 ){
         axios.post(Uri,{},{params: data_test}).then(function (response) {
           
           if(response.data == true){
@@ -30,12 +35,12 @@ const over_lab=(id: any)=>{
           setvisible(false)
          
           
-      })
+      })}else{Alert.alert("아이디가 8자리 이하입니다.")}
     
 }
 const axios_data =()=>{  
   
-    const Uri = 'http://10.0.2.2:8080/site_up'
+    const Uri = IP+'/site_up'
     const data_test = {
       
       userId :form.user.id,
@@ -48,7 +53,9 @@ const axios_data =()=>{
     }
     console.log(JSON.stringify(data_test))
     Alert.alert(JSON.stringify(data_test))
-    
+    if(form.user.id.length >= 8 && form.user.password.length >=8){
+  
+ 
 
     axios.post(Uri, data_test).then(function (response) {
       console.log(JSON.stringify(response.data))
@@ -57,16 +64,16 @@ const axios_data =()=>{
       console.log(error);
      Alert.alert("에러가 발생하였습니다! 다시 가입해주세요") 
     })
-
+   }else{
+    Alert.alert("비밀번호 또는 아이디를 잘못 입력하셨습니다 !")
+   }
      
   
     
 
 
 }   
-const [form, setform] = useState({user:{ id:"",siteid:"",password:"",address:"",address_l:"",Pnumber:""},
-parent:{name:"",address:"",Pnumber:""}
-})
+
     return(<>
       <SafeAreaView style={grany_home.m_v} edges={['top', 'left', 'right']}>
         <ScrollView>
@@ -147,7 +154,7 @@ parent:{name:"",address:"",Pnumber:""}
             form.user.id = text
            /**setform((data)=> {return{ ...data ,form}})**/}}/> 
        </View>
-
+       {form.user.id.length <=8 ? (<Text style={[{color:"red"}]}>아이디는 8자리 이상입니다.</Text>):(<></>)} 
        <View style={[grany_start.form_item]}>
        <Text style={[{flex:1,margin:10},grany_start.form_text]}>비밀번호  </Text>   
        <TouchableOpacity style={[grany_home.flex_button]}></TouchableOpacity>     

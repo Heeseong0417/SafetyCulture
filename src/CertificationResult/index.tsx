@@ -3,7 +3,7 @@ import { Icon, IconButton, List, Text } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import axios from 'axios';
-
+import {IP} from "../screen/util/ServerPath"
 export default function CertificationResult({ route, navigation }:any) {
   const success = route.params.success;
   const imp_uid = route.params.imp_uid;
@@ -12,7 +12,7 @@ export default function CertificationResult({ route, navigation }:any) {
   const Uri = 'http://10.0.2.2:8080/recive'
 
 const axios_data =(data: any)=>{  
-  const Uri = 'http://10.0.2.2:8080/recive'
+  const Uri = IP+'/recive'
   const data_test = {
     userId :"testid",
 userPassword :"testpassword",
