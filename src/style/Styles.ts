@@ -46,9 +46,9 @@ shadowRadius: 3.84,
 elevation: 5
 },list_view:{
   flex: 1,
-  flexDirection:"row",
+  flexDirection:"column",
   justifyContent: 'center',
-  alignSelf: 'center',
+  
   
   },
   list_title:{

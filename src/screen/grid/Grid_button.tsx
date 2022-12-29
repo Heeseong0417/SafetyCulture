@@ -1,9 +1,9 @@
-import { Button, FlatList ,TouchableOpacity} from "react-native";
+import { Alert, Button, FlatList ,TouchableOpacity} from "react-native";
 import {View, Image, Text} from "react-native-animatable";
 
 import { safety_main, styles } from "../../style/Styles";
 import Icon_i from "react-native-vector-icons/FontAwesome5"
-import { Alert, AlertDialog } from "native-base";
+import {  AlertDialog } from "native-base";
 import { useState } from "react";
 import Modal from "react-native-modal"
 import {TouchableHighlight} from "react-native-gesture-handler"
@@ -11,8 +11,9 @@ const Grid_button =({title,navigation,list_item,user}:any)=>{
 
   const [isModalVisible, setModalVisible] = useState(false);
 
-  const toggleModal = () => {
+  const toggleModal = (path:any) => {
     setModalVisible(!isModalVisible);
+    Alert.alert(JSON.stringify(path))
   };
   const print_modal = ()=>{
 
@@ -33,7 +34,7 @@ const Grid_button =({title,navigation,list_item,user}:any)=>{
     )
   }
   const renderItem = ({ item }:any) => (
-    <View
+    <View 
     style={[{
       flex:1,
       flexDirection:'column'
@@ -50,7 +51,7 @@ const Grid_button =({title,navigation,list_item,user}:any)=>{
        </TouchableOpacity> 
       <Text style={[safety_main.home_button_w,{padding:10}]}>{item.name}</Text></>
       ):(<>
-      <TouchableOpacity style={[safety_main.shadow]} onPress={()=>navigation(item.route_path,{data:user})}>
+      <TouchableOpacity style={[safety_main.shadow]} onPress={()=>toggleModal(item.route_path)}>
       <View style={[safety_main.home_btn,{opacity:0.8}]} >
        <Text style={[safety_main.home_button_w,{justifyContent:"center",alignItems:"center"}]}>
  

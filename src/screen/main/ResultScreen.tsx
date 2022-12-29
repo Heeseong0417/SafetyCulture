@@ -18,7 +18,7 @@ const ResultScreen=({route,navigation}:any)=>{
 <Header_create name={route.name} nav={navigation} icon_name={"person-circle-outline"} route_path={"설정"}/>
 
 <View style={[safety_main.list_view]}>
-  <Grid_table/>
+  <Grid_table title={'결과조회'}/>
 </View></SafeAreaView>
 
         </>
