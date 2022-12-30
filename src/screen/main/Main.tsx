@@ -39,7 +39,7 @@ export  const Main: any =()=>{
       {
 splash ? (<>
 
-<View style={{backgroundColor:"#fff",flex:1,justifyContent:"center"}}><Image source={safety}  style={{width:WINDOW_WIDHT,height:WINDOW_WIDHT}} /></View></>):(<NativeBaseProvider><StartNavigation/></NativeBaseProvider>)
+<View style={{backgroundColor:"#fff",flex:1,justifyContent:"center"}}><Image source={safety}  style={{resizeMode:"contain",width:"100%",height:"100%"}} /></View></>):(<NativeBaseProvider><StartNavigation/></NativeBaseProvider>)
 
 
       }

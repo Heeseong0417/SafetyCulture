@@ -27,7 +27,7 @@ import { TabBar } from './TabBar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeNavigation from './HomeNavigation';
 import TestScreen from '../main/TestScreen';
-import { widthPercentageToDP } from 'react-native-responsive-screen';
+import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
 import ResultScreen from '../main/ResultScreen';
 import UserScreen from '../main/UserScreen';
 
@@ -57,6 +57,7 @@ const theme = {
     tabBarPosition="bottom"
     
     screenOptions={{
+ 
 tabBarInactiveTintColor:"#fff",
 tabBarActiveTintColor:"#0093F0",
 tabBarLabelStyle:{opacity:0.8, fontFamily:"GmarketSansTTFMedium",fontWeight:"300"},
@@ -66,6 +67,7 @@ tabBarLabelStyle:{opacity:0.8, fontFamily:"GmarketSansTTFMedium",fontWeight:"300
       
            tabBarStyle:{backgroundColor:"#0073F0", position:"absolute",bottom:5,left:5,right:5,borderRadius:15}
     }}
+    
     
     
    >
@@ -93,7 +95,7 @@ tabBarLabelStyle:{opacity:0.8, fontFamily:"GmarketSansTTFMedium",fontWeight:"300
           
 
          
-          <MaterialCommunityIcons   name="home" color={color} size={widthPercentageToDP('7%')} /> 
+          <MaterialCommunityIcons   name="home" color={color} size={heightPercentageToDP('3%')} /> 
         ),
       }}
       initialParams={{data: route.params.userId,route_nav:navigation}}
@@ -110,7 +112,7 @@ tabBarLabelStyle:{opacity:0.8, fontFamily:"GmarketSansTTFMedium",fontWeight:"300
         tabBarLabel: '평가',
         tabBarIcon: ({ color }) => (
           
-          <MaterialCommunityIcons   name="clipboard-text-outline" color={color} size={widthPercentageToDP('7%')} />
+          <MaterialCommunityIcons   name="clipboard-text-outline" color={color} size={heightPercentageToDP('3%')} />
         ),
       }}
       
@@ -127,21 +129,21 @@ tabBarLabelStyle:{opacity:0.8, fontFamily:"GmarketSansTTFMedium",fontWeight:"300
         tabBarLabel: '결과',
         tabBarIcon: ({ color }) => (
           
-          <MaterialCommunityIcons   name="chart-pie" color={color} size={widthPercentageToDP('7%')} />
+          <MaterialCommunityIcons   name="chart-pie" color={color} size={heightPercentageToDP('3%')} />
         ),
       }}
       
-      initialParams={{data: route.params.userId}}
+      initialParams={{data: route.params.userId,route_nav:navigation}}
     />
     
     <Tab.Screen
-      name="설정"
+      name="정보"
       component={UserScreen}
       options={{
         
-        tabBarLabel: '설정',
+        tabBarLabel: '정보',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons   name="account-box-multiple-outline" color={color} size={widthPercentageToDP('7%')} />
+          <MaterialCommunityIcons   name="account-box-multiple-outline" color={color} size={heightPercentageToDP('3%')} />
         ),
       }}
       initialParams={{data: route.params.userId}}

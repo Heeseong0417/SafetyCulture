@@ -48,7 +48,7 @@ return(<>
 style={[{flex:1}]}
 contentContainerStyle={[safety_main.main_list_item]}
 ListHeaderComponent={
-<View >
+<View style={{paddingTop:30}}>
   
   <Text style={[safety_main.home_title_b]}>{title}</Text>
 </View>

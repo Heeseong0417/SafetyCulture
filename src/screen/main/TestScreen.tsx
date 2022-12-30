@@ -19,16 +19,27 @@ const TestScreen = ({route,navigation}:any)=>{
         {name:"끼임",value:"walking",route_path:"stuck "}
        ]);
 
-return(<><SafeAreaView style={{flex:1,marginBottom:100}} >
+       const list_item = {
+        tableHead: ['NO.', '유형', '평가'],
+        tableData: [
+          ['1', '떨어짐', '떨어짐'],
+          ['2', '물체에 맞음',"물체에 맞음"],
+          ['3', '넘어짐', '넘어짐'],
+          ['4', '부딫힘', '부딫힘'],
+          ['5', '끼임', '끼임']
+        ]
+      }
+
+return(<><SafeAreaView style={{flex:1,backgroundColor:"white"}} >
 
    
 
-<Header_create name={route.name} nav={navigation} icon_name={"person-circle-outline"} route_path={"설정"}/>
+<Header_create name={route.name} nav={navigation} icon_name={"person-circle-outline"} route_path={"정보"}/>
 
 <View style={[safety_main.list_view]}>
 
-<Grid_btn_table title={"카테고리"} navigation = {route.params.route_nav.navigate} list_item={menu}/>
-    <Grid_button title={"카테고리"} navigation = {route.params.route_nav.navigate} list_item={menu}/>
+<Grid_btn_table title={"카테고리"} subtitle={"안전문화를 위한 위험성 평가를 진행해 주세요."} navigation = {route.params.route_nav} list_item={list_item}/>
+    {/**<Grid_button title={"카테고리"} navigation = {route.params.route_nav.navigate} list_item={menu}/>**/}
 </View></SafeAreaView>
 
 </>)

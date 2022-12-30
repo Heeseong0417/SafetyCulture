@@ -1753,6 +1753,11 @@
   "resolved" "https://registry.npmjs.org/@react-native-community/eslint-plugin/-/eslint-plugin-1.3.0.tgz"
   "version" "1.3.0"
 
+"@react-native-community/slider@^4.4.0":
+  "integrity" "sha512-Pvj6NI65tq7KQxvuFenJHgQ0pdm2OXdVYQg9Sx4PCsifHbsDF/BBT4hoV8RjQhaDfil9Kbu/HRI/uXG9QUfXtw=="
+  "resolved" "https://registry.npmjs.org/@react-native-community/slider/-/slider-4.4.0.tgz"
+  "version" "4.4.0"
+
 "@react-native-picker/picker@^2.4.8":
   "integrity" "sha512-5NQ5XPo1B03YNqKFrV6h9L3CQaHlB80wd4ETHUEABRP2iLh7FHLVObX2GfziD+K/VJb8G4KZcZ23NFBFP1f7bg=="
   "resolved" "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.4.8.tgz"
@@ -7220,6 +7225,11 @@
     "sha1-file" "^1.0.4"
     "xcode" "^2.0.0"
 
+"react-native-awesome-slider@^1.4.0":
+  "integrity" "sha512-asK/bUaY0NEr0qKcG1zm4azyZcE3i/4UXmra3/CWvLJtkBgRirpNxJI3K1bi2D51o3RF5G3SrL5hap+zi/Bslg=="
+  "resolved" "https://registry.npmjs.org/react-native-awesome-slider/-/react-native-awesome-slider-1.4.0.tgz"
+  "version" "1.4.0"
+
 "react-native-codegen@^0.70.6":
   "integrity" "sha512-kdwIhH2hi+cFnG5Nb8Ji2JwmcCxnaOOo9440ov7XDzSvGfmUStnCzl+MCW8jLjqHcE4icT7N9y+xx4f50vfBTw=="
   "resolved" "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.70.6.tgz"
@@ -7713,6 +7723,11 @@
   "version" "2.6.3"
   dependencies:
     "glob" "^7.1.3"
+
+"rn-swipe-button@^1.3.8":
+  "integrity" "sha512-5xC9jBzEJ7XCSImYLFfen+YBnt3S91eOU81Uht3odTUuoWkEwtoaESYqfY7U5CLqXY2lD7yZeD6/O6YalWFyng=="
+  "resolved" "https://registry.npmjs.org/rn-swipe-button/-/rn-swipe-button-1.3.8.tgz"
+  "version" "1.3.8"
 
 "rsvp@^4.8.4":
   "integrity" "sha512-nfMOlASu9OnRJo1mbEk2cz0D56a1MBNrJ7orjRZQG10XDyuvwksKbuXNp6qa+kbn839HwjwhBzhFmdsaEAfauA=="

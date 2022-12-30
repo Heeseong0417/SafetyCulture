@@ -1,4 +1,4 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import { CardStyleInterpolators, createStackNavigator } from "@react-navigation/stack";
 import { createSharedElementStackNavigator } from "react-navigation-shared-element";
 import KakaoLogin from "../kakao/KakaoLogin";
 import SiteUp from "../kakao/SiteUp";
@@ -17,6 +17,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import HomeNavigation from "./HomeNavigation";
 import { NativeBaseConfigProvider } from "native-base/lib/typescript/core/NativeBaseContext";
+import Test_Select from "../main/Test_Select";
+import Resultselect from "../main/Result_select";
 
 
 const StartNavigation=()=>{
@@ -27,7 +29,8 @@ const StartNavigation=()=>{
 
     <NavigationContainer>
        <Stack.Navigator initialRouteName='HomeScreen'
-    screenOptions={{ headerShown: false,}}>
+       
+    screenOptions={{ headerShown: false }}>
         <Stack.Screen  name='Start_user' component={Start_user}
         /** sharedElements={(route: any) => {
           const { item }  = route.params;
@@ -102,6 +105,25 @@ const StartNavigation=()=>{
           console.log(JSON.stringify(item))
           return [{ id: `item_${item.id}_image`, animation: "move" }];
         }} */
+   
+   
+        />
+        <Stack.Screen name='Test_Select' component={Test_Select}
+        options={() => ({
+          cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
+          gestureEnabled: false,
+       
+        })}
+   
+   
+        />
+        
+        <Stack.Screen name='Resultselect' component={Resultselect}
+        options={() => ({
+          cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
+          gestureEnabled: false,
+       
+        })}
    
    
         />

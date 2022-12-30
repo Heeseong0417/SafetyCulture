@@ -9,6 +9,7 @@ import {SafeAreaView} from "react-native-safe-area-context"
 import Logo_header from "../header/Logo_header";
 import Modal from "react-native-modal";
 import KE from "../../../assets/logo/logo_대한전기협회.png"
+import { heightPercentageToDP } from "react-native-responsive-screen";
 
 const Safety_main =({route,navigation}:any)=>{
 
@@ -45,7 +46,7 @@ navigation.navigate(`${path}`,{data:route.params.data});
 return(<>
 <SafeAreaView style={grany_home.m_v} >
 
-<Header_create name={route.name} nav={navigation} icon_name={"person-circle-outline"} route_path={"설정"}/>
+<Header_create name={route.name} nav={navigation} icon_name={"person-circle-outline"} route_path={"정보"}/>
 
 <ScrollView
 indicatorStyle='white'
@@ -67,9 +68,10 @@ contentContainerStyle={{backgroundColor:"white"}}>
 </View> 
 
 </View> 
+
 </ScrollView>
 <View style={[{flex:3,alignItems:"center",opacity:0.8}]}>
-<Image style={{position:"absolute",bottom:100, resizeMode:"contain",width:'70%'}} source={KE}></Image>
+<Image style={{position:"absolute",bottom:heightPercentageToDP('10%'), resizeMode:"contain",width:'70%'}} source={KE}></Image>
 
 </View> 
 </SafeAreaView> 
