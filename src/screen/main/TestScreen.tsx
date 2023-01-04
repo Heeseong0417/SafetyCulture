@@ -38,7 +38,7 @@ return(<><SafeAreaView style={{flex:1,backgroundColor:"white"}} >
 
 <View style={[safety_main.list_view]}>
 
-<Grid_btn_table title={"카테고리"} subtitle={"안전문화를 위한 위험성 평가를 진행해 주세요."} navigation = {route.params.route_nav} list_item={list_item}/>
+<Grid_btn_table title={"카테고리"} subtitle={"안전문화를 위한 위험성 평가를 진행해 주세요."} navigation = {route.params.route_nav} list_item={list_item} user={route.params.data}/>
     {/**<Grid_button title={"카테고리"} navigation = {route.params.route_nav.navigate} list_item={menu}/>**/}
 </View></SafeAreaView>
 

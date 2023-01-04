@@ -30,7 +30,7 @@ const Grid_btn_table =({title,subtitle,navigation,list_item,user}:any)=>{
     Alert.alert(`This is row ${index + 1}`);
   }
   const element = (data: any, index: any) => (
-    <TouchableOpacity onPress={() => navigation.navigate('Test_Select',{data:data})}>
+    <TouchableOpacity onPress={() => navigation.navigate('Test_Select',{name:user,data:data})}>
       <View style={styles.btn}> 
         <Text style={styles.btnText}>평가하기 </Text>
       </View>
