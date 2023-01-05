@@ -19,8 +19,8 @@ const table ={
     container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff',opacity:0.8 },
     head: { height: 40, backgroundColor: '#0073F0',padding:5 },
     rows: { height: 60, padding:5,borderBottomWidth:1,borderColor:"#E4DEDE" },
-    text_h: { color:"white",fontFamily:"GmarketSansTTFMedium",textAlign:"center" },
-    text_r:{fontFamily:"GmarketSansTTFMedium",textAlign:"center"}
+    text_h: { color:"white",textAlign:"center" },
+    text_r:{textAlign:"center"}
   });
   const [expanded, setExpanded] = React.useState(true);
 

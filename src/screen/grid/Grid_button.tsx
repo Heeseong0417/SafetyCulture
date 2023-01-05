@@ -7,6 +7,7 @@ import {  AlertDialog } from "native-base";
 import { useState } from "react";
 import Modal from "react-native-modal"
 import {TouchableHighlight} from "react-native-gesture-handler"
+
 const Grid_button =({title,navigation,list_item,user}:any)=>{
 
   const [isModalVisible, setModalVisible] = useState(false);

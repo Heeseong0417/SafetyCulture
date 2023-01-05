@@ -21,9 +21,9 @@ const Grid_btn_table =({title,subtitle,navigation,list_item,user}:any)=>{
     text: { margin: 6 },
     row: { flexDirection: 'row'},
     btn: {  backgroundColor: '#308FFF',  borderRadius: 5 ,alignItems:"center",padding:3},
-    btnText: { textAlign: 'center', color: '#fff' ,fontFamily:"GmarketSansTTFMedium"},
-    text_h: { color:"white",fontFamily:"GmarketSansTTFMedium",textAlign:"center",paddingVertical:5 },
-    text_r:{fontFamily:"GmarketSansTTFMedium",textAlign:"center"}
+    btnText: { textAlign: 'center', color: '#fff' },
+    text_h: { color:"white",textAlign:"center",paddingVertical:5 },
+    text_r:{textAlign:"center"}
   });
 
   const _alertIndex=(index: number)=> {

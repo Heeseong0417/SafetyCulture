@@ -19,6 +19,7 @@ import HomeNavigation from "./HomeNavigation";
 import { NativeBaseConfigProvider } from "native-base/lib/typescript/core/NativeBaseContext";
 import Test_Select from "../main/Test_Select";
 import Resultselect from "../main/Result_select";
+import Test_Select_result from "../main/Test_Select_result";
 
 
 const StartNavigation=()=>{
@@ -119,6 +120,15 @@ const StartNavigation=()=>{
         />
         
         <Stack.Screen name='Resultselect' component={Resultselect}
+        options={() => ({
+          cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
+          gestureEnabled: false,
+       
+        })}
+   
+   
+        />
+         <Stack.Screen name='Test_Select_result' component={Test_Select_result}
         options={() => ({
           cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
           gestureEnabled: false,

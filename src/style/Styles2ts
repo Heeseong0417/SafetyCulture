@@ -26,7 +26,7 @@ export const safety_main = StyleSheet.create(
     color:"black",
     opacity:0.8,
     fontWeight:"bold",
-    
+    fontFamily:"GmarketSansTTFBold",
     fontSize:WINDOW_HEIGHT/45,
     borderRadius:15
   },category_subtitle:{
@@ -35,7 +35,7 @@ export const safety_main = StyleSheet.create(
     color:"black",
     opacity:0.8,
    
-    
+    fontFamily:"GmarketSansTTFMedium",
     fontSize:WINDOW_HEIGHT/50
   },category_subtitle_thin:{
     margin:5,
@@ -43,7 +43,7 @@ export const safety_main = StyleSheet.create(
      color:"black",
      opacity:0.8,
     
-     
+     fontFamily:"GmarketSansTTFLight",
      fontSize:WINDOW_HEIGHT/50
    },category_txt:{
     margin:5,
@@ -51,7 +51,7 @@ export const safety_main = StyleSheet.create(
     color:"black",
     opacity:0.8,
    
-    
+    fontFamily:"GmarketSansTTFLight",
     fontSize:WINDOW_HEIGHT/55
   },category_divline:{
     paddingHorizontal:10,
@@ -88,7 +88,7 @@ backgroundColor:"white"
     color:"black",
     opacity:0.8,
     fontWeight:"bold",
-    
+    fontFamily:"GmarketSansTTFBold",
     fontSize:WINDOW_HEIGHT/40,
     borderRadius:15
   },card_subtitle:{
@@ -97,7 +97,7 @@ backgroundColor:"white"
     color:"black",
     opacity:0.8,
    
-    
+    fontFamily:"GmarketSansTTFLight",
     fontSize:WINDOW_HEIGHT/50
   },
   home_btn:{
@@ -144,7 +144,7 @@ elevation: 5
   color:"gray",
   fontSize:WINDOW_WIDHT/22,
   fontWeight:"bold",
-  
+  fontFamily:"GmarketSansTTFMedium",
   opacity:0.8,
   margin:5
 
@@ -158,13 +158,13 @@ elevation: 5
   home_button_w:{
 textAlign:"center",
 color:"white",
-
+fontFamily:"GmarketSansTTFMedium",
 
   },home_button_b:{
     textAlign:"center",
     color:"black",
     opacity:0.6,
-    
+    fontFamily:"GmarketSansTTFMedium",
   },home_title_b:{
     marginVertical:10,
     marginHorizontal:5,
@@ -172,7 +172,7 @@ color:"white",
     color:"black",
     opacity:0.8,
     fontWeight:"bold",
-    
+    fontFamily:"GmarketSansTTFBold",
     fontSize:WINDOW_HEIGHT/30
   },home_title_b_s:{
     marginBottom:10,
@@ -181,7 +181,7 @@ color:"white",
     color:"black",
     opacity:0.8,
     
-    
+    fontFamily:"GmarketSansTTFLight",
     fontSize:WINDOW_HEIGHT/55
   }
 }
@@ -228,7 +228,7 @@ export const styles = StyleSheet.create({
     },
     submitButton: {
       borderRadius:5,
-      
+      fontFamily:'GmarketSansTTFBold',
       alignContent:'center',
       display: "flex",
       flexDirection: "column",
@@ -244,14 +244,14 @@ export const styles = StyleSheet.create({
       color: 'white'
     },
     textcolor:{
-      
+      fontFamily:'GmarketSansTTFBold',
       //shadowColor:'black',
       fontSize:WINDOW_WIDHT/36 ,
       color:'gray'
       
     },
     textcolor_bold:{
-     
+      fontFamily:'GmarketSansTTFBold',
       //shadowColor:'black',
       fontSize:15,
       color:'gray',
@@ -265,7 +265,7 @@ export const styles = StyleSheet.create({
       justifyContent: "center"
     },
     text: {
-      
+      fontFamily:'GmarketSansTTFLight',
       color: "white",
       fontSize: 42,
       lineHeight: 84,
@@ -274,7 +274,7 @@ export const styles = StyleSheet.create({
       backgroundColor: "#000000c0"
     },
     titletext:{
-      
+      fontFamily:'GmarketSansTTFLight',
         color: "white",
         fontSize: 42,
         lineHeight: 84,
@@ -315,7 +315,7 @@ height:WINDOW_HEIGHT/4,
       fontWeight:"bold",
         color:"gray",
         opacity: 0.8,
-        
+        fontFamily:"GmarketSansTTFMedium",
         fontSize:WINDOW_WIDHT/30
       
     }
@@ -333,11 +333,11 @@ header_black:{
   justifyContent:"space-around",
   color:"#fff",
   fontWeight:"700",
-  
+  fontFamily:"GmarketSansTTFLight",
   fontSize:WINDOW_WIDHT/20
 },header_text:{
  opacity:0.8,
-  justifyContent:"space-between",color:"#fff",fontWeight:"700",fontSize:WINDOW_WIDHT/20
+  justifyContent:"space-between",color:"#fff",fontWeight:"700",fontFamily:"GmarketSansTTFLight",fontSize:WINDOW_WIDHT/20
 
 },stick:{
   paddingHorizontal:10,
@@ -373,21 +373,21 @@ text_b:{
   padding:10,
   color:"black",
   opacity: 0.8,
-  
+  fontFamily:"GmarketSansTTFMedium",
   fontSize:WINDOW_WIDHT/30
 },
 text_w:{
   padding:10,
 color:"white",
 opacity: 0.8,
-
+fontFamily:"GmarketSansTTFMedium",
 fontSize:WINDOW_WIDHT/35
 
 },text_g:{
   padding:10,
   color:"black",
   opacity: 0.8,
-  
+  fontFamily:"GmarketSansTTFMedium",
   fontSize:WINDOW_WIDHT/40
   
   },box_b:{
@@ -427,7 +427,7 @@ borderRadius:5,
    justifyContent:"center",
    color:"black",
     opacity: 0.8,
-    
+    fontFamily:"GmarketSansTTFBold",
     fontSize:WINDOW_WIDHT/20,
     fontWeight:"bold"
   },
@@ -438,7 +438,7 @@ borderRadius:5,
    justifyContent:"center",
    color:"black",
     opacity: 0.8,
-    
+    fontFamily:"GmarketSansTTFBold",
     fontSize:WINDOW_WIDHT/40,
     fontWeight:"bold"},
     title_h2:{
@@ -448,7 +448,7 @@ borderRadius:5,
      justifyContent:"center",
      color:"black",
       opacity: 0.8,
-      
+      fontFamily:"GmarketSansTTFBold",
       fontSize:WINDOW_WIDHT/30,
       fontWeight:"bold"},
   
@@ -510,14 +510,14 @@ borderRadius:5,
 color:"black",
 opacity:0.8,
 
-
+fontFamily:"GmarketSansTTFBold",
 fontSize:WINDOW_WIDHT/15,
 fontWeight:'bold'
   },
   main_card_sub:{
     color:"black",
     opacity:0.8,
-    
+    fontFamily:"GmarketSansTTFMedium",
     fontSize:WINDOW_WIDHT/20,
     fontWeight:'bold'
     
@@ -525,7 +525,7 @@ fontWeight:'bold'
       main_card_text:{
         color:"black",
         opacity:0.8,
-        
+        fontFamily:"GmarketSansTTFMedium",
         fontSize:WINDOW_WIDHT/30
       },
       main_card_divide:{
@@ -596,7 +596,7 @@ fontWeight:'bold'
    
         color:"white",
         opacity: 0.8,
-        
+        fontFamily:"GmarketSansTTFMedium",
         fontSize:WINDOW_WIDHT/30
       },chart_con:{
         
@@ -644,7 +644,7 @@ alignItems:"center",
     ,main_home_button: {
       margin:10,
 padding:10,
-
+fontFamily:"GmarketSansTTFBold",
 borderRadius:20,
 backgroundColor:"#007FFF",
 width:WINDOW_WIDHT/3,
@@ -666,7 +666,7 @@ elevation: 5
       flex:1,
       margin:10,
 padding:20,
-
+fontFamily:"GmarketSansTTFBold",
 borderRadius:20,
 backgroundColor:"#007FFF",
 
@@ -688,7 +688,7 @@ elevation: 5
     flexShrink:0,
 flex:1,
 padding:10,
-
+fontFamily:"GmarketSansTTFBold",
 borderRadius:10,
 backgroundColor:"#F4F3FD",
 fontSize:WINDOW_WIDHT/35,
@@ -711,7 +711,7 @@ elevation: 5
      
       margin:10,
 padding:20,
-
+fontFamily:"GmarketSansTTFBold",
 borderRadius:20,
 backgroundColor:"#007FFF",
 opacity:0.95,
@@ -783,7 +783,7 @@ elevation: 5
     alignItems:"center",
     
     height:WINDOW_HEIGHT/13,
-    
+    fontFamily:"GmarketSansTTFBold",
   },
   main_header_i:{
     
@@ -792,14 +792,14 @@ elevation: 5
     
     color:"#000",
         opacity:0.8,
-        
+        fontFamily:"GmarketSansTTFMedium",
         fontSize:WINDOW_WIDHT/20,
         fontWeight:'bold'
   },
   main_timg_text:{
     color:"black",
     opacity:0.8,
-    
+    fontFamily:"GmarketSansTTFMedium",
     fontSize:WINDOW_WIDHT/30,
      
   },
@@ -902,20 +902,20 @@ elevation: 5
     color:"gray",
     fontSize:WINDOW_WIDHT/22,
     fontWeight:"bold",
-    
+    fontFamily:"GmarketSansTTFMedium",
     opacity:0.8,
     margin:5
     },
     extra_bold : {
       fontSize:WINDOW_WIDHT/13,
       fontWeight:"900",
-      
+      fontFamily:"GmarketSansTTFMedium",
       opacity:0.8,
       margin:5  
     },extra_bold_g:{
       fontSize:WINDOW_WIDHT/15,
       fontWeight:"900",
-      
+      fontFamily:"GmarketSansTTFMedium",
       opacity:0.8,
         
       color:"#73AF00"
@@ -923,7 +923,7 @@ elevation: 5
     },extra_bold_y:{
       fontSize:WINDOW_WIDHT/15,
       fontWeight:"900",
-      
+      fontFamily:"GmarketSansTTFMedium",
       opacity:0.8,
         
       color:"#FFC248"
@@ -931,7 +931,7 @@ elevation: 5
     },unit_text:{
       fontSize:WINDOW_WIDHT/25,
       fontWeight:"900",
-      
+      fontFamily:"GmarketSansTTFMedium",
       opacity:0.8,
       marginLeft:5,
       color:"black"
@@ -941,7 +941,7 @@ elevation: 5
     ,div_text:{
       fontSize:WINDOW_WIDHT/20,
       fontWeight:"bold",
-      
+      fontFamily:"GmarketSansTTFMedium",
       opacity:0.8,
       margin:5  
     },
@@ -949,14 +949,14 @@ elevation: 5
       color:"gray",
     fontSize:WINDOW_WIDHT/25,
 
-    
+    fontFamily:"GmarketSansTTFMedium",
     opacity:0.8,
     margin:5
       },
       flex_b:{
         fontSize:WINDOW_WIDHT/18,
         fontWeight:"900",
-        
+        fontFamily:"GmarketSansTTFBold",
         opacity:0.8,
         margin:5  
       },flex_button:{
@@ -975,7 +975,7 @@ elevation: 5
        
       },flex_blue_btn_text:{
         color:"#fff",
-        
+        fontFamily:"GmarketSansTTFBold",
         fontSize:WINDOW_WIDHT/20,
         textAlign:"center",
         justifyContent:"center",
@@ -986,14 +986,14 @@ elevation: 5
         color:"black",
         fontSize:WINDOW_WIDHT/23,
         fontWeight:"900",
-        
+        fontFamily:"GmarketSansTTFMedium",
         opacity:0.8,
         marginHorizontal:5
       },user_sub_name:{
         color:"black",
         fontSize:WINDOW_WIDHT/23,
         
-        
+        fontFamily:"GmarketSansTTFMedium",
         opacity:0.8,
         margin:5
       },stick:{
@@ -1043,7 +1043,7 @@ form_title:{
   color:"black",
     fontSize:WINDOW_WIDHT/12,
     fontWeight:"900",
-    
+    fontFamily:"GmarketSansTTFBold",
     opacity:0.8,
     margin:10  
   
@@ -1063,14 +1063,14 @@ form_title:{
   color:"black",
   fontSize:WINDOW_WIDHT/22,
   fontWeight:"500",
-  
+  fontFamily:"GmarketSansTTFLight",
   opacity:0.8,
 
 },form_text_bold:{
   color:"black",
   fontSize:WINDOW_WIDHT/20,
   
-  
+  fontFamily:"GmarketSansTTFMedium",
   opacity:0.8,
 
 },form_item:{
@@ -1088,7 +1088,7 @@ form_title:{
  
 },flex_blue_btn_text:{
   color:"#fff",
-  
+  fontFamily:"GmarketSansTTFLight",
   fontSize:WINDOW_WIDHT/20,
   textAlign:"center",
   justifyContent:"center",

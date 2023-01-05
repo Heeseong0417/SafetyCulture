@@ -6,12 +6,15 @@ import Modal from "react-native-modal/dist/modal";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { grany_home, grany_start } from "../../style/Styles";
 import {IP} from "../util/ServerPath"
+import Spinner from 'react-native-loading-spinner-overlay';
+
 const Login =({navigation}:any)=>{
     const [isModal, setModal] = useState(false);
     const [visible, setvisible] = useState(false)
     const [users_data, setusers_data] = useState({id:"",password:""})
+    const [loading, setloading] = useState(false)
     const axios_data =()=>{  
-  
+  setloading(data=> data = true)
         const Uri = IP+'/site_in'
        // const Uri_p = 'http://10.0.2.2:8080/parent'
         const data_test = {
@@ -22,7 +25,7 @@ const Login =({navigation}:any)=>{
       dipartment :""
         }
         console.log(JSON.stringify(data_test))
-        Alert.alert(JSON.stringify(data_test))
+        //Alert.alert(JSON.stringify(data_test))
         
     
         axios.post(Uri, data_test).then(function (response) {
@@ -90,15 +93,19 @@ const Login =({navigation}:any)=>{
             
           }
           */   
-         if(response.data == true){navigation.reset({routes: [{name: 'BottomTabNav',params:data_test}]})  }
-        else{ Alert.alert("에러가 발생하였습니다! 다시 로그인해주세요") }
+         if(response.data == true){navigation.reset({routes: [{name: 'BottomTabNav',params:data_test}]})
+         
+        }
+        else{ Alert.alert("에러가 발생하였습니다! 다시 로그인해주세요")  
+         }
 
         }).catch(function (error) {
           console.log(error);
          Alert.alert("에러가 발생하였습니다! 다시 로그인해주세요") 
+         
         })
     
-         
+        setloading(data=> data = false) 
       
         
     
@@ -108,7 +115,11 @@ const Login =({navigation}:any)=>{
 return(<>
     <SafeAreaView style={grany_home.m_v} edges={['top', 'left', 'right']}>
         <ScrollView>
-        
+        <Spinner
+          visible={loading}
+          textContent={'Loading...'}
+          textStyle={{color:"white"}}
+        />
     <View style={[grany_start.siteup_con]}>
         <View style={[grany_start.form_title_con]}>
             <Text style={[grany_start.form_title]}>로그인</Text>
@@ -157,7 +168,8 @@ return(<>
             {users_data.password.length <=8 ? (<Text style={[{color:"red"}]}>비밀번호는 8자리 이상입니다.</Text>):(<></>)} 
 
         
-            <TouchableOpacity style={[grany_home.flex_blue_btn,{marginBottom:20}]} onPress={()=> axios_data() }>
+            <TouchableOpacity style={[grany_home.flex_blue_btn,{marginBottom:20}]} onPress={()=> {setloading(data=> data = false) 
+              axios_data()} }>
 <Text  style={[grany_home.flex_blue_btn_text]}>로그인</Text>
             </TouchableOpacity>
                     
