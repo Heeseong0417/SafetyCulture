@@ -20,6 +20,7 @@ import { NativeBaseConfigProvider } from "native-base/lib/typescript/core/Native
 import Test_Select from "../main/Test_Select";
 import Resultselect from "../main/Result_select";
 import Test_Select_result from "../main/Test_Select_result";
+import Result_select from "../main/Result_select";
 
 
 const StartNavigation=()=>{
@@ -137,6 +138,7 @@ const StartNavigation=()=>{
    
    
         />
+         <Stack.Screen name='Result_select' component={Result_select}/>
       </Stack.Navigator></NavigationContainer></SafeAreaProvider>
     </>)
 }

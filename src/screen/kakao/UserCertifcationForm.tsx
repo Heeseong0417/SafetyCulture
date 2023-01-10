@@ -46,7 +46,7 @@ const [form, setform] = useState({user:{ name:"이희승", Pnumber:""}
       
        </View>
        <View style={[grany_start.form_item]}>
-       <TextInput defaultValue="이희승" placeholder={"이름을 입력하세요."}style={[grany_start.form_text_input,grany_start.form_text]} onChangeText={(text) => {
+       <TextInput placeholder={"이름을 입력하세요."}style={[grany_start.form_text_input,grany_start.form_text]} onChangeText={(text) => {
             form.user.name = text
            /**setform((data)=> {return{ ...data ,form}})**/}}/> 
        </View>
@@ -87,7 +87,7 @@ const [form, setform] = useState({user:{ name:"이희승", Pnumber:""}
                 },
                 tierCode:'imp04335465'
               }
-              Alert.alert(JSON.stringify(data))
+              //Alert.alert(JSON.stringify(data))
               form.user.name===""||form.user.Pnumber ==="" ? (Alert.alert("이름과 전화번호를 정확히 입력하세요.")):navigation.navigate('Certification', data)
               
               }} >

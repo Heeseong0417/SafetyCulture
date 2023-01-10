@@ -53,13 +53,14 @@ const theme = {
   
   return (
     <Tab.Navigator
-    initialRouteName="Home"
+    initialRouteName={route.params.bn_key === "결과"?"결과":"Home"}
     tabBarPosition="bottom"
     
     screenOptions={{
  
 tabBarInactiveTintColor:"#fff",
 tabBarActiveTintColor:"#0093F0",
+lazy:true,
 tabBarLabelStyle:{opacity:0.8, fontFamily:"GmarketSansTTFMedium",fontWeight:"300"},
       tabBarItemStyle:{flex:1},
       tabBarIconStyle:{alignItems:"center",width:widthPercentageToDP('10%'),opacity:0.8},

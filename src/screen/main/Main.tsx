@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 
 import { NativeBaseProvider } from 'native-base';
+import safety_no_move from "../../../assets/logo/safety_no_move.png"
 import safety from "../../../assets/logo/safety_logo.gif"
 import {View} from 'react-native-animatable';
 import { Image } from 'react-native-animatable';
@@ -30,7 +31,7 @@ export  const Main: any =()=>{
         setsplash(data => data = false)
       }, 3000);
       return () => {
-       
+         
       }
     }, [])
 
@@ -39,7 +40,7 @@ export  const Main: any =()=>{
       {
 splash ? (<>
 
-<View style={{backgroundColor:"#fff",flex:1,justifyContent:"center"}}><Image source={safety}  style={{resizeMode:"contain",width:"100%",height:"100%"}} /></View></>):(<NativeBaseProvider><StartNavigation/></NativeBaseProvider>)
+<View style={{backgroundColor:"#fff",flex:1,justifyContent:"center"}}><Image source={safety_no_move}  style={{resizeMode:"contain",width:"100%",height:"100%"}} /></View></>):(<NativeBaseProvider><StartNavigation/></NativeBaseProvider>)
 
 
       }

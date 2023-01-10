@@ -4,6 +4,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+    android:usesCleartextTraffic="true"
       android:name=".MainApplication"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
@@ -22,9 +23,17 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
              <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth“ -->
-      <data android:host="oauth"
-          android:scheme="kakao2b81cd2da76e90718df0da6077b19126" />
+
         </intent-filter>
+        <intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+          <data android:host="oauth"
+          android:scheme="kakao2b81cd2da76e90718df0da6077b19126" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data android:scheme="myapp"
+        android:host="callhost" />
+</intent-filter>
       
       </activity>
     </application>
