@@ -5,6 +5,8 @@ import { grany_home, safety_main } from "../../style/Styles";
 import StackHeader from "../header/StackHeader";
 import { RadioButton } from 'react-native-paper';
 import Grid_List_button from "../grid/Grid_List_toggle";
+import { IP } from "../util/ServerPath";
+import axios from "axios";
 
 
 const Test_Select_result=({route,navigation}:any)=>{
@@ -19,8 +21,63 @@ const Test_Select_result=({route,navigation}:any)=>{
 const Child_state_get=(data:any)=>{
 
     setselect_option(item=> item = data )
-
+ console.log(select_option)   
 }
+
+    const axios_data = async ()=>{  
+        setloading((data)=>data = true)
+      
+      
+          switch(route.params.data){
+            
+          }
+
+
+          const data_test={
+userId:result_data.userId,
+date:String(result_data.date),
+selectOption:JSON.stringify(select_option)
+          }
+            const Uri = IP+'/save_option'
+         
+          
+  console.log("lastsend : ",data_test)      
+           
+          
+         
+            const headers = {
+              "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+              "Authorization": "token",
+                "Content-Type" : "application/json"
+             
+            }
+        
+            if(data_test.selectOption === ""){
+              Alert.alert("모든 항목을 채워주세요.")
+              setloading(data=> data = false)
+            }else{
+        
+           
+            await axios.post( Uri,data_test,{headers:headers}
+             ).then(function (response) {
+
+        
+                navigation.reset({routes:[{name:"BottomTabNav",params:{userId:result_data.userId,bn_key:"결과"}}]})
+                setloading((data)=>data = false)
+              console.log(response.data)
+             // Alert.alert(JSON.stringify(response.data))
+              // navigation.reset({routes: [{name: 'Start_user'}]})
+            }).catch(function (error) {
+              console.log(error);
+             Alert.alert("에러가 발생하였습니다! 다시 시도 해주세요") 
+             setloading((data)=>data = false)
+            })
+           
+           }
+            
+           setloading((data)=>data = false)
+          }
+
     return(<>
         <SafeAreaView style={[grany_home.m_v,{backgroundColor:"#0073F0",backfaceVisibility:"hidden"}]} >
         <Spinner
@@ -72,9 +129,7 @@ contentContainerStyle={{backgroundColor:"white"}}>
        <Grid_List_button list_item={ result_data.testClass =="떨어짐"? option:result_data.testClass === "부딪힘"?option2:""  } state={Child_state_get}/>
 
        <TouchableOpacity onPress={()=>{
-        setloading(()=>true)
-        navigation.reset({routes:[{name:"BottomTabNav",params:{userId:result_data.userId,bn_key:"결과"}}]})
-        setloading(()=>false)
+   axios_data()
         }}>
 <View style={[safety_main.shadow,safety_main.category_button,{backgroundColor:"#0073F0",margin:20}]}>
 <Text style={[safety_main.category_subtitle,{color:"white",textAlign:"center"}]}>완료 </Text>

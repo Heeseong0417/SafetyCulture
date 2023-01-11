@@ -4,7 +4,7 @@ import { Alert, FlatList, Text, TouchableOpacity, View } from "react-native";
 import { safety_main } from "../../style/Styles";
 import Ionicons from "react-native-vector-icons/Ionicons"
 
-const Grid_List_button = ({list_item,state}:any)=>{
+const Grid_List_button = ({list_item,state,print_option}:any)=>{
 
 
 
@@ -18,7 +18,7 @@ const Grid_List_button = ({list_item,state}:any)=>{
   const toggle = (index:any)=>{
     option[index].value = !option[index].value
 setoption(data=> [...option])
-state(()=> [...option])
+state([...option])
 
   }
   
@@ -51,7 +51,22 @@ state(()=> [...option])
     <View>
 
 
-{option.map((item:any,index:number)=>(<>
+{print_option === 'text'?(
+list_item.map((item:any,index:number)=>(<>
+
+ <View>
+  <View style={[{flex:1,flexDirection:"row", borderRadius:10,backgroundColor:"white",margin:10,padding:10,justifyContent:"space-between",alignItems:"center"},safety_main.shadow]}>
+  
+  <Text style={[{fontWeight:"bold",textAlign:"center"}]}>{index+1}. {item.name}</Text>
+  
+  <Text style={[]}>
+  <Ionicons name={"md-checkmark-sharp"} size={30} color={item.value == false ? "gray":"green"}/>
+    </Text>
+  </View>
+ </View>
+  </>)))
+
+:(option.map((item:any,index:number)=>(<>
 
 <TouchableOpacity style={{}} onPress={()=>{
 toggle(index)
@@ -65,7 +80,7 @@ toggle(index)
   </Text>
 </View>
 </TouchableOpacity>
-</>))}
+</>)))}
 
    
   </View>

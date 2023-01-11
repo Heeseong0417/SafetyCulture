@@ -52,7 +52,7 @@ const axios_data =()=>{
 
     }
     console.log(JSON.stringify(data_test))
-    Alert.alert(JSON.stringify(data_test))
+
     if(form.user.id.length >= 8 && form.user.password.length >=8){
   
  
@@ -60,9 +60,10 @@ const axios_data =()=>{
     axios.post(Uri, data_test).then(function (response) {
       console.log(JSON.stringify(response.data))
        navigation.reset({routes: [{name: 'Start_user'}]})
+       Alert.alert("가입을 환영합니다!")
     }).catch(function (error) {
       console.log(error);
-     Alert.alert("에러가 발생하였습니다! 다시 가입해주세요") 
+     Alert.alert("에러가 발생하였습니다! 다시 가입해주세요\n error : "+error) 
     })
    }else{
     Alert.alert("비밀번호 또는 아이디를 잘못 입력하셨습니다 !")
@@ -86,7 +87,7 @@ const axios_data =()=>{
 
                     /**setform((data)=> {return{ ...data ,form}})**/
                     setModal(data=> data = false)
-                    Alert.alert(JSON.stringify(data))}} onError={function (error: unknown): void {
+                    /*Alert.alert(JSON.stringify(data))*/}} onError={function (error: unknown): void {
                   throw new Error('Function not implemented.');
                 } }  />
   </Modal>
@@ -154,7 +155,7 @@ const axios_data =()=>{
             form.user.id = text
            /**setform((data)=> {return{ ...data ,form}})**/}}/> 
        </View>
-       {form.user.id.length <=8 ? (<Text style={[{color:"red"}]}>아이디는 8자리 이상입니다.</Text>):(<></>)} 
+       {form.user.id.length <8 ? (<Text style={[{color:"red"}]}>아이디는 8자리 이상입니다.</Text>):(<></>)} 
        <View style={[grany_start.form_item]}>
        <Text style={[{flex:1,margin:10},grany_start.form_text]}>비밀번호  </Text>   
        <TouchableOpacity style={[grany_home.flex_button]}></TouchableOpacity>     
@@ -165,7 +166,7 @@ const axios_data =()=>{
             /**setform((data)=> {return{ ...data ,form}})**/}}/>
 
         </View>
-            {form.user.password.length <=8 ? (<Text style={[{color:"red"}]}>비밀번호는 8자리 이상입니다.</Text>):(<></>)} 
+            {form.user.password.length <8 ? (<Text style={[{color:"red"}]}>비밀번호는 8자리 이상입니다.</Text>):(<></>)} 
         
         {/** 
         <View style={[grany_start.form_item]}>

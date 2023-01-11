@@ -15,8 +15,7 @@ import Main_home from '../navigation/Main_home';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StartNavigation from '../navigation/StartNavigation';
-const WINDOW_WIDHT = Dimensions.get("window").width; // Dimensions.get("screen").width;
-const WINDOW_HEIGHT = Dimensions.get("window").height;
+
 
 
 export  const Main: any =()=>{

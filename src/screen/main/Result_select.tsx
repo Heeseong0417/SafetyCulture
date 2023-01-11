@@ -1,9 +1,11 @@
-import { useState } from "react"
-import { SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
+import axios from "axios"
+import { useEffect, useState } from "react"
+import { Alert, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
 import Spinner from "react-native-loading-spinner-overlay/lib"
 import { grany_home, safety_main } from "../../style/Styles"
 import Grid_List_button from "../grid/Grid_List_toggle"
 import StackHeader from "../header/StackHeader"
+import { IP } from "../util/ServerPath"
 
 const Resultselect =({navigation,route}:any)=>{
 
@@ -15,11 +17,72 @@ const Resultselect =({navigation,route}:any)=>{
     const [select_option, setselect_option] = useState([{name:"",value:false}])
     const result_data = route.params.result_data;
 
+    useEffect(() => {
+
+        axios_data()
+
+    
+      return () => {
+       
+      }
+    }, [])
+    
 const Child_state_get=(data:any)=>{
+
 
     setselect_option(item=> item = data )
 
 }
+
+const axios_data = async ()=>{  
+    setloading((data)=>data = true)
+  
+  
+      switch(route.params.data){
+        
+      }
+
+      const data_test={
+userId:result_data.userId,
+date:result_data.date
+      }
+        const Uri = IP+'/result_option'
+     
+      
+    
+       
+      
+     
+        const headers = {
+          "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "Authorization": "token",
+            "Content-Type" : "application/json"
+         
+        }
+    
+       
+    console.log("dattest data : ",data_test)
+       
+        await axios.post( Uri,{},{params:data_test,headers:headers}
+         ).then(function (response) {
+
+            
+            setoption(data=> data = JSON.parse(response.data[0].selectOption))
+            setoption2(data=> data = JSON.parse(response.data[0].selectOption))
+            setloading((data)=>data = false)
+          console.log(response.data[0].selectOption)
+         // Alert.alert(JSON.stringify(response.data))
+          // navigation.reset({routes: [{name: 'Start_user'}]})
+        }).catch(function (error) {
+          console.log(error);
+         Alert.alert("에러가 발생하였습니다! 다시 시도 해주세요") 
+         setloading((data)=>data = false)
+        })
+       
+        setloading((data)=>data = false)
+        
+    
+      }
     return(<>
         <SafeAreaView style={[grany_home.m_v,{backgroundColor:"#0073F0",backfaceVisibility:"hidden"}]} >
         <Spinner
@@ -68,7 +131,7 @@ contentContainerStyle={{backgroundColor:"white"}}>
 </View>
 </View>
 
-       <Grid_List_button list_item={ result_data.testClass =="떨어짐"? option:result_data.testClass === "부딪힘"?option2:""  } state={Child_state_get}/>
+       <Grid_List_button list_item={ result_data.testClass =="떨어짐"? option:result_data.testClass === "부딪힘"?option2:""  } state={Child_state_get} print_option={'text'}/>
 
        <TouchableOpacity onPress={()=>{
         setloading(()=>true)

@@ -12,47 +12,72 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- 테이블 데이터 SafetyCulture.sc_test:~11 rows (대략적) 내보내기
+
+-- SafetyCulture 데이터베이스 구조 내보내기
+CREATE DATABASE IF NOT EXISTS `SafetyCulture` /*!40100 DEFAULT CHARACTER SET utf8mb3 */;
+USE `SafetyCulture`;
+
+-- 테이블 SafetyCulture.sc_test 구조 내보내기
+CREATE TABLE IF NOT EXISTS `sc_test` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `userId` varchar(50) NOT NULL,
+  `testClass` varchar(50) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `userName` varchar(50) NOT NULL,
+  `department` varchar(50) NOT NULL,
+  `userWeight` varchar(50) NOT NULL,
+  `selectItem` varchar(50) NOT NULL,
+  `obWeight` varchar(50) NOT NULL,
+  `obHeight` varchar(50) NOT NULL,
+  `speed` varchar(50) NOT NULL,
+  `distance` varchar(50) NOT NULL,
+  `energy` varchar(50) NOT NULL,
+  `riskIntensity` varchar(50) NOT NULL,
+  `responsiveness` varchar(50) NOT NULL,
+  `LTI` varchar(50) NOT NULL,
+  `check` varchar(50) NOT NULL DEFAULT 'none',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COMMENT='`sc_test` (`userId`, `testClass`, `date`, `userName`, `department`, `userWeight`, `selectItem`, `obWeight`, `obHeight`, `speed`, `distance`, `energy`, `riskIntensity`, `responsiveness`, `LTI`, `id`, `check`)';
+
+-- 테이블 데이터 SafetyCulture.sc_test:~0 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `sc_test` DISABLE KEYS */;
-INSERT INTO `sc_test` (`userId`, `testClass`, `date`, `userName`, `department`, `userWeight`, `selectItem`, `obWeight`, `obHeight`, `speed`, `distance`, `energy`, `riskIntensity`, `responsiveness`, `LTI`, `id`, `check`) VALUES
-	('wodlrr2', '떨어짐', '2023-01-06 14:40:25.92826', '이희승', '없음', '57.5', '작업발판', '0', '1.0', '0', '0', '563.5', '3급 위험', '563.5', '3급 위험', 1, ''),
-	('wodlrr2', '떨어짐', '2023-01-06 14:41:29.87953', '이희승', '없음', '37.5', '작업발판', '0', '1.0', '0', '0', '367.5', '3급 위험', '367.5', '3급 위험', 2, ''),
-	('wodlrr2', '부딪힘', '2023-01-06 14:41:41.54541', '이희승', '없음', '0', '대차', '1000.0', '0', '57.5', '0', '1653125.0', '1급 위험', '500.0', '1급 위험', 3, ''),
-	('wodlrr2', '부딪힘', '2023-01-06 14:42:34.02840', '이희승', '없음', '0', '대차', '1000.0', '0', '57.5', '0', '1653125.0', '1급 위험', '500.0', '1급 위험', 4, ''),
-	('wodlrr2', '부딪힘', '2023-01-06 14:43:02.18243', '이희승', '없음', '0', '크레인', '1000.0', '0', '51.5', '0', '1326125.0', '1급 위험', '500.0', '1급 위험', 5, ''),
-	('wodlrr2', '부딪힘', '2023-01-06 14:46:59.71396', '이희승', '없음', '0', '대차', '1000.0', '0', '66.5', '0', '2211125.0', '1급 위험', '500.0', '1급 위험', 6, ''),
-	('wodlrr2', '떨어짐', '2023-01-06 15:06:24.36297', '이희승', '없음', '60.0', '작업발판', '0', '10.5', '0', '0', '6174.0', '1급 위험', '588.0', '1급 위험', 7, ''),
-	('wodlrr2', '떨어짐', '2023-01-06 15:09:32.37437', '이희승', '없음', '34.5', '차량', '0', '9.5', '0', '0', '3211.9500000000003', '1급 위험', '338.1', '1급 위험', 8, ''),
-	('wodlrr2', '떨어짐', '2023-01-06 15:12:48.40509', '이희승', '없음', '62.0', '작업발판', '0', '4.0', '0', '0', '2430.4', '1급 위험', '607.6', '1급 위험', 9, ''),
-	('wodlrr2', '부딪힘', '2023-01-06 15:15:25.91155', '이희승', '없음', '0', '크레인', '1000.0', '0', '58.0', '0', '1682000.0', '1급 위험', '500.0', '1급 위험', 10, ''),
-	('wodlrr2', '부딪힘', '2023-01-06 15:19:23.15965', '이희승', '없음', '0', '크레인', '1000.0', '0', '74.0', '0', '2738000.0', '1급 위험', '500.0', '1급 위험', 11, ''),
-	('wodlrr2', '떨어짐', '2023-01-06 16:42:31.31480', '이희승', '없음', '47.5', '차량', '0', '12.5', '0', '0', '5818.75', '1급 위험', '465.50000000000006', '1급 위험', 12, ''),
-	('wodlrr2', '떨어짐', '2023-01-06 17:15:40.07319', '이희승', '없음', '42.0', '작업발판', '0', '7.5', '0', '0', '3087.0', '1급 위험', '411.6', '1급 위험', 13, ''),
-	('wodlrr2', '부딪힘', '2023-01-06 18:04:47.69712', '이희승', '없음', '0', '대차', '1000.0', '0', '80.5', '0', '3240125.0', '1급 위험', '500.0', '1급 위험', 14, ''),
-	('wodlrr2', '떨어짐', '2023-01-09 07:38:24.15617', '이희승', '없음', '68.0', '사다리', '0', '5.5', '0', '0', '3665.2000000000003', '1급 위험', '666.4000000000001', '1급 위험', 15, ''),
-	('wodlrr2', '떨어짐', '2023-01-09 07:43:05.42124', '이희승', '없음', '1.0', '사다리', '0', '6.5', '0', '0', '63.7', '3급 위험', '9.8', '3급 위험', 16, ''),
-	('admin', '부딪힘', '2023-01-09 07:44:01.10831', '사용자', '없음', '0', '크레인', '1000.0', '0', '42.0', '0', '882000.0', '1급 위험', '500.0', '1급 위험', 17, ''),
-	('admin', '떨어짐', '2023-01-09 07:49:54.59960', '사용자', '없음', '69.0', '작업발판', '0', '1.0', '0', '0', '676.2', '3급 위험', '676.2', '3급 위험', 18, '');
+INSERT INTO `sc_test` (`id`, `userId`, `testClass`, `date`, `userName`, `department`, `userWeight`, `selectItem`, `obWeight`, `obHeight`, `speed`, `distance`, `energy`, `riskIntensity`, `responsiveness`, `LTI`, `check`) VALUES
+	(1, 'admin', '떨어짐', '2023-01-11 17:19:36', 'admin', '없음', '74.5', '작업발판', '0', '1.0', '0', '0', '730.1', '3급 위험', '730.1', '3급 위험', 'none'),
+	(2, 'admin', '떨어짐', '2023-01-11 17:29:32', 'admin', '없음', '54.0', '작업발판', '0', '2.5', '0', '0', '1323.0', '2급 위험', '529.2', '2급 위험', 'none');
 /*!40000 ALTER TABLE `sc_test` ENABLE KEYS */;
 
--- 테이블 데이터 SafetyCulture.sc_test_SEQ:~1 rows (대략적) 내보내기
-/*!40000 ALTER TABLE `sc_test_SEQ` DISABLE KEYS */;
-INSERT INTO `sc_test_SEQ` (`next_not_cached_value`, `minimum_value`, `maximum_value`, `start_value`, `increment`, `cache_size`, `cycle_option`, `cycle_count`) VALUES
-	(50001, 1, 9223372036854775806, 1, 50, 1000, 0, 0);
-/*!40000 ALTER TABLE `sc_test_SEQ` ENABLE KEYS */;
+-- 테이블 SafetyCulture.sc_user 구조 내보내기
+CREATE TABLE IF NOT EXISTS `sc_user` (
+  `userId` varchar(50) NOT NULL,
+  `userPassword` varchar(50) NOT NULL,
+  `userName` varchar(50) NOT NULL,
+  `userPhone` varchar(50) NOT NULL,
+  `level` varchar(50) DEFAULT NULL,
+  `department` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='`sc_user` (`userId`, `userPassword`, `userName`, `userPhone`, `level`, `department`) VALUES';
 
--- 테이블 데이터 SafetyCulture.sc_user:~3 rows (대략적) 내보내기
+-- 테이블 데이터 SafetyCulture.sc_user:~0 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `sc_user` DISABLE KEYS */;
 INSERT INTO `sc_user` (`userId`, `userPassword`, `userName`, `userPhone`, `level`, `department`) VALUES
-	('admin', '1234', '사용자', '010-0000-0000', '3', '없음'),
-	('asdqwe123', '12345678', '이희승', '01055226929', '3', ''),
-	('dfdfdfdfd', '11111111', '이희승', '01055226929', '3', '없음'),
-	('wodlrr2', '1234', '이희승', '01055226929', '3', '없음');
+	('admin', '1234', 'admin', '010-0000-0000', '3', '없음');
 /*!40000 ALTER TABLE `sc_user` ENABLE KEYS */;
 
--- 테이블 데이터 SafetyCulture.TestInputDTO:~0 rows (대략적) 내보내기
-/*!40000 ALTER TABLE `TestInputDTO` DISABLE KEYS */;
-/*!40000 ALTER TABLE `TestInputDTO` ENABLE KEYS */;
+-- 테이블 SafetyCulture.select_option 구조 내보내기
+CREATE TABLE IF NOT EXISTS `select_option` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `userId` varchar(50) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `selectOption` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+
+-- 테이블 데이터 SafetyCulture.select_option:~0 rows (대략적) 내보내기
+/*!40000 ALTER TABLE `select_option` DISABLE KEYS */;
+INSERT INTO `select_option` (`id`, `userId`, `date`, `selectOption`) VALUES
+	(1, 'admin', '2023-01-11 17:19:36', '[{"name":"안전모 착용","value":true},{"name":"작업 바닥 단차 점검","value":true},{"name":"안전 장치 조치","value":true},{"name":"2인 1조 작업","value":false},{"name":"최상부 발판 작업 금지","value":true}]'),
+	(2, 'admin', '2023-01-11 17:29:32', '[{"name":"안전모 착용","value":true},{"name":"작업 바닥 단차 점검","value":true},{"name":"안전 장치 조치","value":true},{"name":"2인 1조 작업","value":false},{"name":"최상부 발판 작업 금지","value":true}]');
+/*!40000 ALTER TABLE `select_option` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;

@@ -99,6 +99,7 @@ setloading(data=> data = true)
     }).catch(function (error) {
       console.log(error);
      Alert.alert("에러가 발생하였습니다! 다시 시도 해주세요") 
+     setloading(data=> data = false)
     })
    
    }
