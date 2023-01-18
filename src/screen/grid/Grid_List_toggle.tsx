@@ -60,7 +60,7 @@ list_item.map((item:any,index:number)=>(<>
   <Text style={[{fontWeight:"bold",textAlign:"center"}]}>{index+1}. {item.name}</Text>
   
   <Text style={[]}>
-  <Ionicons name={"md-checkmark-sharp"} size={30} color={item.value == false ? "gray":"green"}/>
+  <Ionicons name={"md-checkmark-sharp"} size={30} color={item.value == false ? "gray":"red"}/>
     </Text>
   </View>
  </View>
@@ -76,7 +76,7 @@ toggle(index)
 <Text style={[{fontWeight:"bold",textAlign:"center"}]}>{index+1}. {item.name}</Text>
 
 <Text style={[]}>
-<Ionicons name={"md-checkmark-sharp"} size={30} color={item.value == false ? "gray":"green"}/>
+<Ionicons name={"md-checkmark-sharp"} size={30} color={item.value == false ? "gray":"red"}/>
   </Text>
 </View>
 </TouchableOpacity>

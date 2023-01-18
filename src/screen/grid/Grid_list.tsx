@@ -1,3 +1,4 @@
+import { background } from "native-base/lib/typescript/theme/styled-system";
 import { Alert, FlatList, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { safety_main } from "../../style/Styles";
@@ -10,23 +11,24 @@ const Grid_list=({title,subtitle,list_item,navigation}:any)=>{
  
 
           <TouchableOpacity style={[{padding:10,backgroundColor:"white"}]} onPress={()=>navigation.navigate("Result_select",{result_data:item})}>
-        
-          <View style={[{flex:1,flexDirection:"row", borderRadius:10,backgroundColor:"white",margin:10,padding:10,justifyContent:"space-between",alignItems:"center"},safety_main.shadow]}>
+          
+          <View style={{flexDirection:"row",alignContent:"center",alignItems:"center",marginBottom:5}}>
+            <Ionicons name={"radio-button-on-sharp"} size={13} color={item.value == false ? "gray":"#0073F0"}/>
+          <Text style={[{fontWeight:"bold",textAlign:"center",fontSize:13,marginLeft:10}]}>{item.date}</Text>
+          </View>
+          
+          <View style={[{flex:1,flexDirection:"row", borderRadius:10,backgroundColor:"white",padding:10,justifyContent:"space-between",alignItems:"center"},safety_main.shadow]}>
 
-<Text style={[{fontWeight:"bold",textAlign:"center"}]}>{item.testClass}</Text>
-
-<Text style={[]}>
+<Text style={[{fontWeight:"bold",textAlign:"center",fontSize:15}]}>{item.testClass}</Text>
+<Text style={[{textAlign:"center",alignItems:"center",fontSize:15}]}>{item.riskIntensity}</Text>
+<Text style={[{textAlign:"center",fontSize:15}]}>
     평가 완료 
-<Ionicons name={"md-checkmark-sharp"} size={30} color={item.value == false ? "gray":"green"}/>
+  
+<Ionicons name={"md-checkmark-sharp"} size={15} color={item.value == false ? "gray":"#0073F0"}/>
   </Text>
 </View>
           
-            <View style={{justifyContent:"space-around",marginLeft:20}}>
-    
-            <Text style={[safety_main.home_button_w,{color:"black"}]}>
-            {item.riskIntensity}
-            </Text>
-           <Text style={[safety_main.home_button_b,{}]}> {item.date}</Text></View>
+
             </TouchableOpacity> 
         
            
